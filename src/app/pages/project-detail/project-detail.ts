@@ -19,11 +19,13 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   LucideArrowLeft,
   LucideArrowUpRight,
+  LucideBoxes,
   LucideChevronDown,
   LucideChevronUp,
   LucideCircleCheck,
   LucideLayers,
   LucideShieldCheck,
+  LucideTestTubeDiagonal,
 } from '@lucide/angular';
 import { PortfolioService } from '../../core/services/portfolio.service';
 
@@ -34,11 +36,13 @@ import { PortfolioService } from '../../core/services/portfolio.service';
     NgOptimizedImage,
     LucideArrowLeft,
     LucideArrowUpRight,
+    LucideBoxes,
     LucideChevronDown,
     LucideChevronUp,
     LucideCircleCheck,
     LucideLayers,
     LucideShieldCheck,
+    LucideTestTubeDiagonal,
   ],
   templateUrl: './project-detail.html',
   styleUrl: './project-detail.css',

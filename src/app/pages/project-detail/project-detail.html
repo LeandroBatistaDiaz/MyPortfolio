@@ -64,7 +64,22 @@
             @if (index === 2) {
               <div class="story-slide__tech">
                 @for (technology of project.technologies; track technology) {
-                  <span>{{ technology }}</span>
+                  <span class="story-tech-badge">
+                    @switch (technology) {
+                      @case ('Angular') { <img src="/icons/angular.svg" alt="" /> }
+                      @case ('.NET') { <img src="/icons/dotnet.svg" alt="" /> }
+                      @case ('.NET 8') { <img src="/icons/dotnet.svg" alt="" /> }
+                      @case ('ASP.NET Web API') { <img src="/icons/dotnet.svg" alt="" /> }
+                      @case ('REST APIs') { <img src="/icons/swagger.svg" alt="" /> }
+                      @case ('SQL Server') { <img src="/icons/sql-server.svg" alt="" /> }
+                      @case ('Entity Framework') { <img src="/icons/entity-framework.svg" alt="" /> }
+                      @case ('C#') { <img src="/icons/csharp.svg" alt="" /> }
+                      @case ('Blazor') { <img src="/icons/blazor.svg" alt="" /> }
+                      @case ('Clean Architecture') { <svg lucideBoxes [size]="16"></svg> }
+                      @case ('Unit Testing') { <svg lucideTestTubeDiagonal [size]="16"></svg> }
+                    }
+                    {{ technology }}
+                  </span>
                 }
               </div>
             }
