@@ -45,6 +45,7 @@
 .technology-badge:hover { border-color: color-mix(in srgb, var(--blue) 44%, var(--line)); background: linear-gradient(145deg, rgb(77 143 255 / 12%), transparent); transform: translateY(-2px); }
 .technology-badge > span:last-child { min-width: 0; overflow-wrap: anywhere; }
 .technology-badge__icon { display: grid; width: 1.85rem; min-width: 1.85rem; height: 1.85rem; place-items: center; border: 1px solid rgb(77 143 255 / 26%); border-radius: 0.6rem; background: rgb(77 143 255 / 12%); color: var(--blue-soft); }
+.technology-badge__icon img { width: 1.35rem; height: 1.35rem; object-fit: contain; }
 .availability-card { display: flex; align-items: center; gap: 0.75rem; color: var(--mint); }
 .availability-card div { min-width: 0; }
 .availability-card strong { color: var(--text); font-size: 0.75rem; }
