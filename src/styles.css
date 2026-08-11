@@ -159,8 +159,8 @@ button { border: 0; }
 
 .story-slide__visual--screenshot { background: #f6f8fb; }
 .story-slide__visual--screenshot .story-slide__image--screenshot {
-  object-fit: contain;
-  padding: clamp(1rem, 4vw, 4rem);
+  object-fit: contain !important;
+  padding: clamp(1rem, 4vw, 4rem) !important;
 }
 .story-slide__visual--screenshot .story-slide__veil,
 .story-slide__visual--screenshot .story-slide__mockup { display: none; }
@@ -213,6 +213,44 @@ button { border: 0; }
     background: linear-gradient(180deg, rgb(244 247 251 / 8%) 20%, rgb(244 247 251 / 86%) 68%, #eef3f8 100%);
   }
   :root[data-theme='light'] .story-slide__content { background: transparent; }
+}
+
+@media (max-width: 820px) {
+  .story-slide__content {
+    background: linear-gradient(180deg, transparent 18%, rgb(3 6 12 / 14%) 32%, rgb(3 6 12 / 86%) 64%, #03060c 100%) !important;
+  }
+  :root[data-theme='light'] .story-slide__content {
+    background: linear-gradient(180deg, transparent 18%, rgb(244 247 251 / 18%) 32%, rgb(244 247 251 / 92%) 64%, #eef3f8 100%) !important;
+  }
+  .story-slide__visual--screenshot .story-slide__image--screenshot {
+    object-fit: contain !important;
+    padding: 4.5rem 0 14rem !important;
+  }
+  .story-slide__content h1,
+  .story-slide__content > p,
+  .story-slide__content li { text-shadow: 0 2px 18px rgb(0 0 0 / 42%); }
+  :root[data-theme='light'] .story-slide__content h1,
+  :root[data-theme='light'] .story-slide__content > p,
+  :root[data-theme='light'] .story-slide__content li { text-shadow: 0 1px 10px rgb(255 255 255 / 78%); }
+}
+
+@media (max-width: 820px) {
+  .story-slide__content {
+    background: linear-gradient(180deg, transparent 18%, rgb(3 6 12 / 14%) 32%, rgb(3 6 12 / 86%) 64%, #03060c 100%) !important;
+  }
+  :root[data-theme='light'] .story-slide__content {
+    background: linear-gradient(180deg, transparent 18%, rgb(244 247 251 / 18%) 32%, rgb(244 247 251 / 92%) 64%, #eef3f8 100%) !important;
+  }
+  .story-slide__visual--screenshot .story-slide__image--screenshot {
+    object-fit: contain !important;
+    padding: 4.5rem 0 14rem !important;
+  }
+  .story-slide__content h1,
+  .story-slide__content > p,
+  .story-slide__content li { text-shadow: 0 2px 18px rgb(0 0 0 / 42%); }
+  :root[data-theme='light'] .story-slide__content h1,
+  :root[data-theme='light'] .story-slide__content > p,
+  :root[data-theme='light'] .story-slide__content li { text-shadow: 0 1px 10px rgb(255 255 255 / 78%); }
 }
 
 @media (prefers-reduced-motion: reduce) {
