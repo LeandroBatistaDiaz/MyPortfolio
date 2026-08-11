@@ -42,7 +42,19 @@
     </span>
     <div class="project-card__tech" aria-label="Tecnologías principales">
       @for (technology of project().technologies.slice(0, 3); track technology) {
-        <span>{{ technology }}</span>
+        <span class="project-tech-badge">
+          @switch (technology) {
+            @case ('Angular') { <img src="/icons/angular.svg" alt="" /> }
+            @case ('.NET') { <img src="/icons/dotnet.svg" alt="" /> }
+            @case ('.NET 8') { <img src="/icons/dotnet.svg" alt="" /> }
+            @case ('ASP.NET Web API') { <img src="/icons/dotnet.svg" alt="" /> }
+            @case ('REST APIs') { <img src="/icons/swagger.svg" alt="" /> }
+            @case ('SQL Server') { <img src="/icons/sql-server.svg" alt="" /> }
+            @case ('C#') { <img src="/icons/csharp.svg" alt="" /> }
+            @case ('Blazor') { <img src="/icons/blazor.svg" alt="" /> }
+          }
+          {{ technology }}
+        </span>
       }
     </div>
   </footer>
