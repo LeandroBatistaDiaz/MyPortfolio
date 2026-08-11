@@ -10,15 +10,11 @@
   </a>
 
   <nav class="desktop-nav" aria-label="Navegación principal">
-    <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="is-active">
-      <svg lucideHouse [size]="18"></svg>
-      Feed
-    </a>
-    <a routerLink="/" fragment="projects" routerLinkActive="is-active">
+    <a routerLink="/" routerLinkActive="is-active" (click)="goToProjects($event)">
       <svg lucideFolderKanban [size]="18"></svg>
       Proyectos
     </a>
-    <a routerLink="/about" routerLinkActive="is-active">
+    <a routerLink="/about" routerLinkActive="is-active" (click)="goToProfile($event)">
       <svg lucideUserRound [size]="18"></svg>
       Perfil
     </a>
@@ -53,15 +49,11 @@
 
 @if (!isStoryMode()) {
   <nav class="mobile-nav" aria-label="Navegación móvil">
-    <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="is-active">
-      <svg lucideHouse [size]="21"></svg>
-      <span>Inicio</span>
-    </a>
-    <a routerLink="/" fragment="projects">
+    <a routerLink="/" routerLinkActive="is-active" (click)="goToProjects($event)">
       <svg lucideFolderKanban [size]="21"></svg>
       <span>Proyectos</span>
     </a>
-    <a routerLink="/about" routerLinkActive="is-active">
+    <a routerLink="/about" routerLinkActive="is-active" (click)="goToProfile($event)">
       <svg lucideUserRound [size]="21"></svg>
       <span>Perfil</span>
     </a>

@@ -5,7 +5,6 @@ import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } fro
 import {
   LucideArrowUpRight,
   LucideFolderKanban,
-  LucideHouse,
   LucideMail,
   LucideMoon,
   LucideSun,
@@ -21,7 +20,6 @@ type Theme = 'dark' | 'light';
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-    LucideHouse,
     LucideFolderKanban,
     LucideUserRound,
     LucideMail,
@@ -39,7 +37,7 @@ export class App {
   private readonly platformId = inject(PLATFORM_ID);
 
   readonly isStoryMode = signal(this.router.url.startsWith('/projects/'));
-  readonly theme = signal<Theme>('dark');
+  readonly theme = signal<Theme>('light');
 
   constructor() {
     this.applyTheme(this.getInitialTheme(), false);
@@ -56,13 +54,27 @@ export class App {
     this.applyTheme(this.theme() === 'dark' ? 'light' : 'dark');
   }
 
+  goToProjects(event: MouseEvent): void {
+    if (this.router.url.split('#')[0] !== '/') return;
+
+    event.preventDefault();
+    if (isPlatformBrowser(this.platformId)) window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  goToProfile(event: MouseEvent): void {
+    if (!this.router.url.startsWith('/about')) return;
+
+    event.preventDefault();
+    this.router.navigateByUrl('/');
+  }
+
   private getInitialTheme(): Theme {
-    if (!isPlatformBrowser(this.platformId)) return 'dark';
+    if (!isPlatformBrowser(this.platformId)) return 'light';
 
     const stored = window.localStorage.getItem('portfolio-theme');
     if (stored === 'light' || stored === 'dark') return stored;
 
-    return typeof window.matchMedia === 'function' && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return 'light';
   }
 
   private applyTheme(theme: Theme, persist = true): void {

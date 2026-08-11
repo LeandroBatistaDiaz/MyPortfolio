@@ -5,11 +5,7 @@ import {
   LucideArrowUpRight,
   LucideBadgeCheck,
   LucideBriefcaseBusiness,
-  LucideCode,
-  LucideDatabase,
   LucideMapPin,
-  LucideMoveRight,
-  LucideServerCog,
   LucideSparkles,
 } from '@lucide/angular';
 import { PortfolioService } from '../../core/services/portfolio.service';
@@ -24,10 +20,6 @@ import { ProjectCardComponent } from '../../shared/components/project-card/proje
     LucideBriefcaseBusiness,
     LucideArrowUpRight,
     LucideSparkles,
-    LucideCode,
-    LucideDatabase,
-    LucideServerCog,
-    LucideMoveRight,
     LucideBadgeCheck,
   ],
   templateUrl: './home.html',

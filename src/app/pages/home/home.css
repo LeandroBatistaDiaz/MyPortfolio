@@ -4,6 +4,8 @@
 .profile-card__cover { height: 5.5rem; margin: -1.1rem -1.1rem 0; background: linear-gradient(135deg, rgb(77 143 255 / 50%), rgb(94 229 189 / 18%)), radial-gradient(circle at 25% 20%, #719cff, transparent 42%); }
 .profile-card__avatar { position: relative; display: grid; width: 4.7rem; aspect-ratio: 1; place-items: center; margin-top: -2.4rem; overflow: hidden; border: 4px solid var(--surface); border-radius: 50%; background: var(--ink-soft); }
 .profile-card__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.profile-card--link { display: block; color: inherit; transition: transform 160ms ease, border-color 160ms ease; }
+.profile-card--link:hover { border-color: color-mix(in srgb, var(--blue) 42%, var(--line)); transform: translateY(-2px); }
 .profile-card__status { position: absolute; top: 6.55rem; right: 1rem; display: inline-flex; align-items: center; gap: 0.35rem; color: var(--mint); font-size: 0.65rem; font-weight: 850; }
 .profile-card__status i { width: 0.48rem; aspect-ratio: 1; border-radius: 50%; background: var(--mint); box-shadow: 0 0 0 4px rgb(94 229 189 / 10%); }
 .profile-card h2 { margin: 0.85rem 0 0; font-size: 1.05rem; }
