@@ -188,6 +188,19 @@ button { border: 0; }
 }
 :root[data-theme='light'] .story-slide__content > p { color: #33445b; }
 :root[data-theme='light'] .story-slide__content li { color: #152238; }
+
+@media (min-width: 821px) {
+  :root[data-theme='light'] .story-slide__content > p {
+    color: #26364d !important;
+    font-weight: 560;
+    opacity: 1;
+  }
+  :root[data-theme='light'] .story-slide__content li {
+    color: #152238 !important;
+    font-weight: 820;
+    opacity: 1;
+  }
+}
 :root[data-theme='light'] .story-slide__tech span {
   border-color: var(--line);
   background: var(--soft-fill);
