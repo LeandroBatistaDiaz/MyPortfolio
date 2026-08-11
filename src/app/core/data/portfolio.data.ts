@@ -63,6 +63,8 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     capabilities: ['Inventario', 'Producción', 'Listas de materiales', 'Facturación'],
     slides: [
       {
+        image: '/images/project-erp-dashboard.png',
+        imageAlt: 'Dashboard general del ERP industrial con resumen de ventas, caja e inventario.',
         label: '01 · Dominio',
         title: 'Fabricar exige conocer qué entra, qué se transforma y qué queda disponible',
         body:
@@ -76,6 +78,8 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
           'La solución incorpora listas de materiales para relacionar cada producto fabricado con los componentes que consume y mantener coherencia entre producción e inventario.',
         metricLabel: 'Modelo central',
         metricValue: 'Bill of Materials (BOM)',
+        image: '/images/project-erp-billing.png',
+        imageAlt: 'Pantalla de facturaciÃ³n del ERP industrial con artÃ­culos, cantidades y resumen de venta.',
       },
       {
         label: '03 · Implementación',

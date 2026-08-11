@@ -4,6 +4,8 @@ export interface ProjectSlide {
   readonly label: string;
   readonly title: string;
   readonly body: string;
+  readonly image?: string;
+  readonly imageAlt?: string;
   readonly bullets?: readonly string[];
   readonly metricLabel?: string;
   readonly metricValue?: string;

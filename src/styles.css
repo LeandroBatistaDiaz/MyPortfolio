@@ -157,6 +157,14 @@ button { border: 0; }
   background: linear-gradient(180deg, rgb(244 247 251 / 88%), transparent);
 }
 
+.story-slide__visual--screenshot { background: #f6f8fb; }
+.story-slide__visual--screenshot .story-slide__image--screenshot {
+  object-fit: contain;
+  padding: clamp(1rem, 4vw, 4rem);
+}
+.story-slide__visual--screenshot .story-slide__veil,
+.story-slide__visual--screenshot .story-slide__mockup { display: none; }
+
 :root[data-theme='light'] .story { background: #eef3f8; color: var(--text); }
 :root[data-theme='light'] .story__progress button { background: rgb(21 34 56 / 20%); }
 :root[data-theme='light'] .story__progress button span { background: var(--blue); }
