@@ -28,7 +28,7 @@
 .project-card__copy h2 { max-width: 16ch; margin: 0.7rem 0 0; font-size: clamp(1.45rem, 3vw, 2.35rem); line-height: 1.02; letter-spacing: -0.045em; }
 .project-card__copy p { max-width: 64ch; margin: 0.8rem 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.65; }
 .project-card__media { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10; background: var(--surface-strong); }
-.project-card__media img { width: 100%; height: 100%; object-fit: cover; transition: scale 500ms cubic-bezier(.2,.8,.2,1); }
+.project-card__media img { width: 100%; height: 100%; object-fit: cover; transition: scale 500ms cubic-bezier(.2,.8,.2,1); animation: project-card-image-zoom 18s ease-in-out infinite; transform-origin: center; will-change: transform; }
 .project-card__media:hover img { scale: 1.035; }
 .project-card__media-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 46%, rgb(2 4 10 / 78%)); }
 .project-card__number { position: absolute; top: 1rem; left: 1rem; color: rgb(255 255 255 / 82%); font-size: 0.72rem; font-weight: 950; letter-spacing: 0.16em; }
@@ -37,6 +37,13 @@
 .project-card__capabilities { display: inline-flex; align-items: center; gap: 0.45rem; color: var(--muted); font-size: 0.7rem; font-weight: 750; }
 .project-card__tech { display: flex; gap: 0.35rem; }
 .project-card__tech span { border-radius: 999px; background: rgb(255 255 255 / 5%); color: var(--muted); padding: 0.3rem 0.48rem; font-size: 0.62rem; font-weight: 800; }
+
+@keyframes project-card-image-zoom {
+  0%, 18% { transform: scale(1); }
+  52% { transform: scale(1.065); }
+  64% { transform: scale(1.085); }
+  100% { transform: scale(1); }
+}
 
 @media (max-width: 720px) {
   .project-card { border-inline: 0; border-radius: 0; }
