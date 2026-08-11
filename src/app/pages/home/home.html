@@ -47,7 +47,23 @@
       <h2>Backend-first.<br />Producto completo.</h2>
       <div class="technology-cloud">
         @for (technology of technologies(); track technology) {
-          <span>{{ technology }}</span>
+          <span class="technology-badge">
+            <span class="technology-badge__icon" aria-hidden="true">
+              @switch (technology) {
+                @case ('C#') { <svg lucideBraces [size]="16"></svg> }
+                @case ('.NET 8') { <svg lucideSquareCode [size]="16"></svg> }
+                @case ('ASP.NET Core') { <svg lucideServerCog [size]="16"></svg> }
+                @case ('REST APIs') { <svg lucideCable [size]="16"></svg> }
+                @case ('SQL Server') { <svg lucideDatabase [size]="16"></svg> }
+                @case ('Entity Framework') { <svg lucideTable2 [size]="16"></svg> }
+                @case ('Angular') { <svg lucideComponent [size]="16"></svg> }
+                @case ('Docker') { <svg lucideContainer [size]="16"></svg> }
+                @case ('Clean Architecture') { <svg lucideBoxes [size]="16"></svg> }
+                @case ('Unit Testing') { <svg lucideTestTubeDiagonal [size]="16"></svg> }
+              }
+            </span>
+            <span>{{ technology }}</span>
+          </span>
         }
       </div>
     </section>

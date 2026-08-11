@@ -40,8 +40,11 @@
 .context-rail { display: grid; gap: 1rem; }
 .context-card, .availability-card { padding: 1.15rem; }
 .context-card h2 { margin: 0.75rem 0 1rem; font-size: 1.5rem; line-height: 1.05; letter-spacing: -0.04em; }
-.technology-cloud { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-.technology-cloud span { border: 1px solid var(--line); border-radius: 999px; background: rgb(255 255 255 / 3%); color: var(--muted); padding: 0.36rem 0.55rem; font-size: 0.63rem; font-weight: 800; }
+.technology-cloud { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.5rem; }
+.technology-badge { display: flex; min-width: 0; min-height: 2.55rem; align-items: center; gap: 0.48rem; border: 1px solid var(--line); border-radius: 0.8rem; background: linear-gradient(145deg, rgb(255 255 255 / 5%), transparent); color: var(--muted); padding: 0.45rem 0.5rem; font-size: 0.61rem; font-weight: 800; line-height: 1.15; transition: transform 160ms ease, border-color 160ms ease, background 160ms ease; }
+.technology-badge:hover { border-color: color-mix(in srgb, var(--blue) 44%, var(--line)); background: linear-gradient(145deg, rgb(77 143 255 / 12%), transparent); transform: translateY(-2px); }
+.technology-badge > span:last-child { min-width: 0; overflow-wrap: anywhere; }
+.technology-badge__icon { display: grid; width: 1.85rem; min-width: 1.85rem; height: 1.85rem; place-items: center; border: 1px solid rgb(77 143 255 / 26%); border-radius: 0.6rem; background: rgb(77 143 255 / 12%); color: var(--blue-soft); }
 .availability-card { display: flex; align-items: center; gap: 0.75rem; color: var(--mint); }
 .availability-card div { min-width: 0; }
 .availability-card strong { color: var(--text); font-size: 0.75rem; }
