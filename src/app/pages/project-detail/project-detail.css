@@ -1,9 +1,9 @@
 .story { position: fixed; inset: 0; z-index: 40; overflow: hidden; background: #03060c; }
-.story__progress { position: fixed; inset: 0.8rem clamp(4.2rem, 10vw, 9rem) auto; z-index: 70; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
+.story__progress { position: fixed; inset: 5.5rem clamp(4.2rem, 10vw, 9rem) auto clamp(11rem, 17vw, 18rem); z-index: 70; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.35rem; }
 .story__progress button { height: 0.22rem; overflow: hidden; border-radius: 999px; background: rgb(255 255 255 / 20%); padding: 0; cursor: pointer; }
 .story__progress button span { display: block; width: 0; height: 100%; background: white; transition: width 220ms ease; }
 .story__progress button.is-active span { width: 100%; }
-.story__back { position: fixed; top: 1.45rem; left: 1.25rem; z-index: 70; display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgb(255 255 255 / 16%); border-radius: 999px; background: rgb(3 6 12 / 46%); padding: 0.6rem 0.78rem; color: white; font-size: 0.72rem; font-weight: 900; backdrop-filter: blur(14px); }
+.story__back { position: fixed; top: 5rem; left: 1.25rem; z-index: 70; display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid rgb(255 255 255 / 16%); border-radius: 999px; background: rgb(3 6 12 / 72%); padding: 0.6rem 0.78rem; color: white; font-size: 0.72rem; font-weight: 900; box-shadow: 0 10px 28px rgb(0 0 0 / 20%); backdrop-filter: blur(14px); }
 .story__slides { height: 100dvh; overflow-y: auto; overscroll-behavior-y: contain; scroll-snap-type: y mandatory; scrollbar-width: none; }
 .story__slides::-webkit-scrollbar { display: none; }
 .story-slide { position: relative; isolation: isolate; display: grid; min-height: 100dvh; grid-template-columns: minmax(0, 1.25fr) minmax(22rem, 0.75fr); align-items: stretch; overflow: hidden; scroll-snap-align: start; scroll-snap-stop: always; }
@@ -69,8 +69,8 @@
 }
 
 @media (max-width: 820px) {
-  .story__progress { inset: 0.55rem 0.75rem auto; }
-  .story__back { top: 1.25rem; left: 0.8rem; width: auto; padding: 0.6rem 0.78rem; aspect-ratio: auto; justify-content: center; box-shadow: 0 10px 28px rgb(0 0 0 / 28%); }
+  .story__progress { inset: 4.65rem 0.75rem auto; }
+  .story__back { top: 5.2rem; left: 0.8rem; width: auto; padding: 0.6rem 0.78rem; aspect-ratio: auto; justify-content: center; box-shadow: 0 10px 28px rgb(0 0 0 / 28%); }
   .story__back span { display: inline; }
   .story-slide { display: block; }
   .story-slide__visual { position: absolute; inset: 0; min-height: auto; }
@@ -96,7 +96,7 @@
   color: var(--text);
 }
 :root[data-theme='light'] .story-slide__veil {
-  background: linear-gradient(90deg, rgb(244 247 251 / 5%), rgb(244 247 251 / 72%)), linear-gradient(0deg, rgb(244 247 251 / 35%), transparent 50%);
+  background: linear-gradient(90deg, rgb(3 6 12 / 8%), rgb(3 6 12 / 34%)), linear-gradient(0deg, rgb(3 6 12 / 22%), transparent 55%);
 }
 :root[data-theme='light'] .story-slide__mockup {
   border-color: rgb(21 34 56 / 16%);
@@ -104,10 +104,10 @@
   box-shadow: 0 35px 90px rgb(40 66 100 / 18%);
 }
 :root[data-theme='light'] .story-slide__content {
-  background: linear-gradient(90deg, rgb(244 247 251 / 94%), #eef3f8 26%);
+  background: #eef3f8;
 }
-:root[data-theme='light'] .story-slide__content > p { color: var(--muted); }
-:root[data-theme='light'] .story-slide__content li { color: var(--text); }
+:root[data-theme='light'] .story-slide__content > p { color: #33445b; }
+:root[data-theme='light'] .story-slide__content li { color: #152238; }
 :root[data-theme='light'] .story-tech-badge {
   border-color: var(--line);
   background: var(--soft-fill);
@@ -127,7 +127,9 @@
 
 @media (max-width: 820px) {
   :root[data-theme='light'] .story-slide__veil {
-    background: linear-gradient(180deg, rgb(244 247 251 / 8%) 20%, rgb(244 247 251 / 86%) 68%, #eef3f8 100%);
+    background: linear-gradient(180deg, rgb(3 6 12 / 12%) 20%, rgb(3 6 12 / 72%) 68%, #03060c 100%);
   }
-  :root[data-theme='light'] .story-slide__content { background: transparent; }
+  :root[data-theme='light'] .story-slide__content { background: linear-gradient(180deg, transparent 18%, rgb(3 6 12 / 14%) 32%, rgb(3 6 12 / 86%) 64%, #03060c 100%) !important; color: white; }
+  :root[data-theme='light'] .story-slide__content > p { color: #e0e7f2; }
+  :root[data-theme='light'] .story-slide__content li { color: #f1f5fb; }
 }
