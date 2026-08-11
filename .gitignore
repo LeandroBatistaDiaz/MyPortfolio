@@ -2,6 +2,9 @@
 
 # Compiled output
 /dist
+/dist-sites-stage
+/work
+*.tgz
 /tmp
 /out-tsc
 /bazel-out
@@ -10,6 +13,12 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+pnpm-debug.log
+
+# Local environment files
+.env
+.env.*
+!.env.example
 
 # IDEs and editors
 .idea/
