@@ -1,0 +1,87 @@
+<div class="page-shell about-page">
+  <section class="surface about-hero">
+    <div>
+      <span class="eyebrow">Perfil profesional</span>
+      <h1>Backend .NET, mentalidad de producto y experiencia empresarial.</h1>
+      <p>
+        Soy Software Engineer especializado en C#, .NET 8, APIs REST y SQL Server. Transformo requisitos de negocio en soluciones mantenibles, desde el modelado de datos hasta la integración y validación funcional.
+      </p>
+      <div class="about-hero__actions">
+        <a class="button-primary" routerLink="/contact">Contactar <svg lucideMoveRight [size]="18"></svg></a>
+        <a class="button-secondary" href="https://www.linkedin.com/in/leandro-b-d/" target="_blank" rel="noreferrer">LinkedIn <svg lucideArrowUpRight [size]="17"></svg></a>
+      </div>
+    </div>
+    <aside class="about-hero__facts" aria-label="Datos profesionales">
+      <span><svg lucideMapPin [size]="19"></svg><strong>Asturias, España</strong><small>Presencial · Híbrido · Remoto</small></span>
+      <span><svg lucideBriefcaseBusiness [size]="19"></svg><strong>Incorporación inmediata</strong><small>Jornada completa</small></span>
+      <span><svg lucideLanguages [size]="19"></svg><strong>Español nativo · Inglés B1</strong><small>Perfil internacional disponible</small></span>
+    </aside>
+  </section>
+
+  <div class="about-layout">
+    <section class="surface timeline" aria-labelledby="experience-title">
+      <span class="eyebrow">Trayectoria</span>
+      <h2 id="experience-title">Experiencia profesional</h2>
+
+      <article>
+        <span class="timeline__dot"></span>
+        <header><time>may. 2026 — ago. 2026</time><span>Remoto · España</span></header>
+        <h3>Software Engineer Intern · C++ / Computer Vision</h3>
+        <p>Desarrollo de software para reconocimiento automático de productos, integración y validación funcional. Scrum Master y liderazgo del equipo de desarrollo.</p>
+        <div><span>C++</span><span>Computer Vision</span><span>Scrum</span></div>
+      </article>
+
+      <article>
+        <span class="timeline__dot"></span>
+        <header><time>ene. 2026 — may. 2026</time><span>Remoto · República Dominicana</span></header>
+        <h3>Product Owner / Python Developer · AI Project</h3>
+        <p>Visión del producto, backlog, historias de usuario, criterios de aceptación y desarrollo en Python para una solución predictiva orientada a seguridad aérea.</p>
+        <div><span>Product Ownership</span><span>Python</span><span>AI</span></div>
+      </article>
+
+      <article>
+        <span class="timeline__dot"></span>
+        <header><time>oct. 2023 — dic. 2025</time><span>Híbrido · República Dominicana</span></header>
+        <h3>Software Developer · .NET & Enterprise Systems</h3>
+        <p>Evolución desde Full Stack .NET Developer hasta responsabilidades de nivel senior, desarrollando sistemas de almacén, fintech, salud, manufactura y facturación electrónica.</p>
+        <div><span>C#</span><span>.NET 8</span><span>Angular</span><span>SQL Server</span></div>
+      </article>
+    </section>
+
+    <aside class="about-sidebar">
+      <section class="surface skill-card">
+        <span class="eyebrow">Tecnologías</span>
+        <h2>Stack con el que construyo</h2>
+        <div>
+          @for (technology of technologies(); track technology) {
+            <span><svg lucideCircleCheck [size]="15"></svg>{{ technology }}</span>
+          }
+        </div>
+      </section>
+
+      <section class="surface education-card">
+        <svg lucideGraduationCap [size]="23"></svg>
+        <span class="eyebrow">Formación</span>
+        <h2>Licenciatura en Informática</h2>
+        <p>2019–2025 · Titulación extranjera actualmente en proceso de homologación en España.</p>
+      </section>
+    </aside>
+  </div>
+
+  <section class="certifications" aria-labelledby="certifications-title">
+    <header>
+      <span class="eyebrow">Aprendizaje continuo</span>
+      <h2 id="certifications-title">Certificaciones seleccionadas</h2>
+    </header>
+    <div>
+      @for (certification of certifications; track certification.title) {
+        <article class="surface">
+          <svg lucideBadgeCheck [size]="22"></svg>
+          <h3>{{ certification.title }}</h3>
+          <p>{{ certification.issuer }}</p>
+          <time>{{ certification.date }}</time>
+        </article>
+      }
+    </div>
+  </section>
+</div>

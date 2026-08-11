@@ -1,0 +1,101 @@
+<div class="page-shell home-grid">
+  <aside class="profile-rail" aria-label="Resumen profesional">
+    <section class="surface profile-card">
+      <div class="profile-card__cover"></div>
+      <div class="profile-card__avatar">LB</div>
+      <span class="profile-card__status"><i></i> Disponible</span>
+      <h2>Leandro Batista</h2>
+      <p>Software Engineer especializado en backend .NET y sistemas empresariales.</p>
+      <dl>
+        <div>
+          <dt><svg lucideMapPin [size]="16"></svg> Ubicación</dt>
+          <dd>Asturias, España</dd>
+        </div>
+        <div>
+          <dt><svg lucideBriefcaseBusiness [size]="16"></svg> Modalidad</dt>
+          <dd>Presencial · Híbrido · Remoto</dd>
+        </div>
+      </dl>
+      <a class="profile-card__link" routerLink="/about">
+        Ver perfil completo
+        <svg lucideArrowUpRight [size]="17"></svg>
+      </a>
+    </section>
+  </aside>
+
+  <div class="feed-column">
+    <section class="surface hero" aria-labelledby="hero-title">
+      <div class="hero__signal"><span></span> Abierto a oportunidades en España</div>
+      <span class="eyebrow">Software con contexto de negocio</span>
+      <h1 id="hero-title">Construyo sistemas que convierten procesos complejos en productos claros.</h1>
+      <p>
+        C#/.NET Backend Developer con experiencia en APIs, datos y aplicaciones empresariales. Desde el análisis del dominio hasta la entrega y evolución del producto.
+      </p>
+      <div class="hero__actions">
+        <a class="button-primary" href="#projects">
+          Explorar proyectos
+          <svg lucideMoveRight [size]="18"></svg>
+        </a>
+        <a class="button-secondary" href="https://www.linkedin.com/in/leandro-b-d/" target="_blank" rel="noreferrer">
+          LinkedIn
+          <svg lucideArrowUpRight [size]="17"></svg>
+        </a>
+      </div>
+      <div class="hero__proof" aria-label="Especialidades principales">
+        <span><svg lucideCode [size]="18"></svg> C# · .NET 8</span>
+        <span><svg lucideServerCog [size]="18"></svg> REST APIs</span>
+        <span><svg lucideDatabase [size]="18"></svg> SQL Server</span>
+      </div>
+      <div class="hero__orb hero__orb--one"></div>
+      <div class="hero__orb hero__orb--two"></div>
+    </section>
+
+    <section id="projects" class="feed" aria-labelledby="projects-title">
+      <header class="feed__header">
+        <div>
+          <span class="eyebrow">Feed de proyectos</span>
+          <h2 id="projects-title">Casos de estudio seleccionados</h2>
+        </div>
+        <span class="feed__hint"><svg lucideSparkles [size]="16"></svg> Desliza y explora</span>
+      </header>
+
+      @for (project of projects(); track project.slug; let index = $index) {
+        <app-project-card [project]="project" [index]="index" />
+      }
+    </section>
+
+    <section class="surface closing-card">
+      <span class="eyebrow">Más allá del código</span>
+      <h2>Decisiones técnicas conectadas con el resultado del producto.</h2>
+      <p>
+        Trabajo con requisitos, modelado de datos, integración, validación y evolución. Mi objetivo no es añadir complejidad, sino construir una base que el equipo pueda entender y mantener.
+      </p>
+      <a class="button-primary" routerLink="/about">Conocer mi trayectoria <svg lucideMoveRight [size]="18"></svg></a>
+    </section>
+  </div>
+
+  <aside class="context-rail" aria-label="Tecnologías y disponibilidad">
+    <section class="surface context-card">
+      <span class="eyebrow">Stack principal</span>
+      <h2>Backend-first.<br />Producto completo.</h2>
+      <div class="technology-cloud">
+        @for (technology of technologies(); track technology) {
+          <span>{{ technology }}</span>
+        }
+      </div>
+    </section>
+
+    <section class="surface availability-card">
+      <svg lucideBadgeCheck [size]="22"></svg>
+      <div>
+        <strong>Incorporación inmediata</strong>
+        <p>Jornada completa · España</p>
+      </div>
+    </section>
+
+    <section class="context-note">
+      <strong>Contenido responsable</strong>
+      <p>Los proyectos empresariales están anonimizados y utilizan recursos visuales conceptuales.</p>
+    </section>
+  </aside>
+</div>

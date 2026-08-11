@@ -1,0 +1,105 @@
+@if (project(); as project) {
+  <section class="story" [attr.data-accent]="project.accent" aria-label="Historia del proyecto">
+    <div class="story__progress" aria-label="Progreso de la historia">
+      @for (slide of project.slides; track slide.label; let index = $index) {
+        <button
+          type="button"
+          [class.is-active]="index <= activeIndex()"
+          [attr.aria-label]="'Ir a ' + slide.label"
+          (click)="goToSlide(index)"
+        ><span></span></button>
+      }
+    </div>
+
+    <a class="story__back" routerLink="/" fragment="projects">
+      <svg lucideArrowLeft [size]="18"></svg>
+      <span>Volver al feed</span>
+    </a>
+
+    <div class="story__slides">
+      @for (slide of project.slides; track slide.label; let index = $index; let last = $last) {
+        <article #storySlide class="story-slide" [attr.aria-label]="slide.label">
+          <div class="story-slide__visual">
+            <img
+              [ngSrc]="project.cover"
+              width="1536"
+              height="1024"
+              [priority]="index === 0"
+              alt=""
+            />
+            <span class="story-slide__veil"></span>
+            <div class="story-slide__mockup" aria-hidden="true">
+              <span class="mockup__bar"><i></i><i></i><i></i></span>
+              <span class="mockup__metric"></span>
+              <span class="mockup__line mockup__line--wide"></span>
+              <span class="mockup__line"></span>
+              <span class="mockup__grid"><i></i><i></i><i></i></span>
+            </div>
+          </div>
+
+          <div class="story-slide__content">
+            <span class="story-slide__label">{{ slide.label }}</span>
+            @if (index === 0) {
+              <span class="story-slide__category">{{ project.category }}</span>
+            }
+            <h1>{{ slide.title }}</h1>
+            <p>{{ slide.body }}</p>
+
+            @if (slide.bullets?.length) {
+              <ul>
+                @for (bullet of slide.bullets; track bullet) {
+                  <li><svg lucideCircleCheck [size]="17"></svg>{{ bullet }}</li>
+                }
+              </ul>
+            }
+
+            @if (slide.metricValue) {
+              <dl>
+                <dt>{{ slide.metricLabel }}</dt>
+                <dd>{{ slide.metricValue }}</dd>
+              </dl>
+            }
+
+            @if (index === 2) {
+              <div class="story-slide__tech">
+                @for (technology of project.technologies; track technology) {
+                  <span>{{ technology }}</span>
+                }
+              </div>
+            }
+
+            @if (last) {
+              <div class="story-slide__disclaimer">
+                <svg lucideShieldCheck [size]="19"></svg>
+                <span>{{ project.disclaimer }}</span>
+              </div>
+              @if (nextProject(); as next) {
+                <a class="story-slide__next" [routerLink]="['/projects', next.slug]">
+                  Siguiente caso · {{ next.shortTitle }}
+                  <svg lucideArrowUpRight [size]="18"></svg>
+                </a>
+              }
+            }
+          </div>
+
+          <aside class="story-slide__rail" aria-label="Navegación de la historia">
+            <span>{{ index + 1 }}/{{ project.slides.length }}</span>
+            <button type="button" [disabled]="index === 0" aria-label="Diapositiva anterior" (click)="goToSlide(index - 1)">
+              <svg lucideChevronUp [size]="22"></svg>
+            </button>
+            <button type="button" [disabled]="last" aria-label="Diapositiva siguiente" (click)="goToSlide(index + 1)">
+              <svg lucideChevronDown [size]="22"></svg>
+            </button>
+            <span class="story-slide__rail-icon"><svg lucideLayers [size]="19"></svg></span>
+          </aside>
+        </article>
+      }
+    </div>
+  </section>
+} @else {
+  <section class="not-found">
+    <span class="eyebrow">Proyecto no encontrado</span>
+    <h1>Este caso todavía no forma parte del portafolio.</h1>
+    <a class="button-primary" routerLink="/">Volver al feed</a>
+  </section>
+}

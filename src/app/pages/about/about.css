@@ -1,0 +1,56 @@
+.about-page { display: grid; gap: 1.25rem; }
+.about-hero { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(18rem, 0.55fr); gap: clamp(2rem, 5vw, 5rem); padding: clamp(1.4rem, 5vw, 4rem); }
+.about-hero h1 { max-width: 15ch; margin: 0.85rem 0 0; font-size: clamp(2.5rem, 6vw, 5.5rem); line-height: 0.93; letter-spacing: -0.07em; }
+.about-hero > div > p { max-width: 65ch; margin: 1.25rem 0 0; color: var(--muted); line-height: 1.7; }
+.about-hero__actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
+.about-hero__facts { display: grid; align-content: center; gap: 0.75rem; }
+.about-hero__facts > span { display: grid; grid-template-columns: auto 1fr; column-gap: 0.65rem; border: 1px solid var(--line); border-radius: 1rem; background: rgb(255 255 255 / 3%); padding: 0.9rem; }
+.about-hero__facts svg { grid-row: 1 / 3; color: var(--mint); }
+.about-hero__facts strong { font-size: 0.75rem; }
+.about-hero__facts small { margin-top: 0.25rem; color: var(--muted); font-size: 0.66rem; }
+.about-layout { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(16rem, 0.45fr); gap: 1.25rem; align-items: start; }
+.timeline { padding: clamp(1.25rem, 4vw, 2.6rem); }
+.timeline > h2, .skill-card h2, .certifications h2 { margin: 0.7rem 0 0; font-size: clamp(1.7rem, 3vw, 2.8rem); letter-spacing: -0.05em; }
+.timeline article { position: relative; margin-left: 0.55rem; padding: 2rem 0 2rem 2rem; border-left: 1px solid var(--line); }
+.timeline article:last-child { padding-bottom: 0; }
+.timeline__dot { position: absolute; top: 2.25rem; left: -0.42rem; width: 0.78rem; aspect-ratio: 1; border: 3px solid var(--surface); border-radius: 50%; background: var(--blue); box-shadow: 0 0 0 3px rgb(77 143 255 / 14%); }
+.timeline header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.45rem; color: var(--muted); font-size: 0.66rem; font-weight: 800; }
+.timeline h3 { margin: 0.7rem 0 0; font-size: clamp(1.1rem, 2vw, 1.45rem); letter-spacing: -0.025em; }
+.timeline p { max-width: 70ch; margin: 0.65rem 0 0; color: var(--muted); font-size: 0.8rem; line-height: 1.65; }
+.timeline article > div { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.8rem; }
+.timeline article > div span { border-radius: 999px; background: rgb(255 255 255 / 4%); color: var(--muted); padding: 0.32rem 0.5rem; font-size: 0.63rem; font-weight: 800; }
+.about-sidebar { position: sticky; top: 6rem; display: grid; gap: 1.25rem; }
+.skill-card, .education-card { padding: 1.25rem; }
+.skill-card h2 { font-size: 1.55rem; }
+.skill-card > div { display: grid; grid-template-columns: 1fr 1fr; gap: 0.45rem; margin-top: 1rem; }
+.skill-card > div span { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--muted); font-size: 0.67rem; font-weight: 800; }
+.skill-card svg, .education-card > svg { color: var(--mint); }
+.education-card > svg { margin-bottom: 1rem; }
+.education-card h2 { margin: 0.7rem 0 0; font-size: 1.35rem; letter-spacing: -0.04em; }
+.education-card p { margin: 0.65rem 0 0; color: var(--muted); font-size: 0.72rem; line-height: 1.6; }
+.certifications { padding-block: 2rem; }
+.certifications > header { padding-inline: 0.35rem; }
+.certifications > div { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; margin-top: 1.2rem; }
+.certifications article { position: relative; padding: 1.15rem; }
+.certifications article svg { color: var(--blue-soft); }
+.certifications article h3 { min-height: 3.2rem; margin: 1.2rem 0 0; font-size: 0.84rem; line-height: 1.35; }
+.certifications article p { margin: 0.65rem 0 0; color: var(--muted); font-size: 0.66rem; }
+.certifications article time { position: absolute; top: 1rem; right: 1rem; color: var(--muted); font-size: 0.62rem; font-weight: 850; }
+
+@media (max-width: 900px) {
+  .about-hero { grid-template-columns: 1fr; }
+  .about-hero__facts { grid-template-columns: repeat(3, 1fr); }
+  .about-layout { grid-template-columns: 1fr; }
+  .about-sidebar { position: static; grid-template-columns: 1fr 1fr; }
+  .certifications > div { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .about-hero { padding: 1.4rem 1rem 1.8rem; }
+  .about-hero h1 { font-size: clamp(2.7rem, 13vw, 4.1rem); }
+  .about-hero__facts { grid-template-columns: 1fr; }
+  .timeline, .skill-card, .education-card { border-inline: 0; }
+  .about-sidebar { display: grid; grid-template-columns: 1fr; }
+  .certifications { padding-inline: 1rem; }
+  .certifications > div { grid-template-columns: 1fr; }
+  .certifications article h3 { min-height: auto; }
+}

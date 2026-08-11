@@ -1,0 +1,47 @@
+<article class="project-card" [attr.data-accent]="project().accent">
+  <header class="project-card__header">
+    <span class="project-card__avatar">LB</span>
+    <span class="project-card__identity">
+      <strong>Leandro Batista</strong>
+      <small>{{ project().role }} · Caso {{ index() + 1 | number: '2.0' }}</small>
+    </span>
+    <span class="project-card__verified" title="Caso anonimizado y revisado">
+      <svg lucideShieldCheck [size]="17"></svg>
+      Anonimizado
+    </span>
+  </header>
+
+  <div class="project-card__copy">
+    <span class="eyebrow">{{ project().category }}</span>
+    <h2>{{ project().title }}</h2>
+    <p>{{ project().summary }}</p>
+  </div>
+
+  <a class="project-card__media" [routerLink]="['/projects', project().slug]" [attr.aria-label]="'Abrir ' + project().title">
+    <img
+      [ngSrc]="project().cover"
+      width="1536"
+      height="1024"
+      [alt]="'Visual conceptual de ' + project().title"
+      [priority]="index() === 0"
+    />
+    <span class="project-card__media-overlay"></span>
+    <span class="project-card__number">0{{ index() + 1 }}</span>
+    <span class="project-card__open">
+      Ver historia del proyecto
+      <svg lucideArrowUpRight [size]="18"></svg>
+    </span>
+  </a>
+
+  <footer class="project-card__footer">
+    <span class="project-card__capabilities">
+      <svg lucideLayers [size]="17"></svg>
+      {{ project().capabilities.slice(0, 2).join(' · ') }}
+    </span>
+    <div class="project-card__tech" aria-label="Tecnologías principales">
+      @for (technology of project().technologies.slice(0, 3); track technology) {
+        <span>{{ technology }}</span>
+      }
+    </div>
+  </footer>
+</article>

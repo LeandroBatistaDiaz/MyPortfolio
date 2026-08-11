@@ -1,0 +1,56 @@
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+<header class="topbar" [class.topbar--story]="isStoryMode()">
+  <a class="brand" routerLink="/" aria-label="Ir al inicio">
+    <span class="brand__mark">LB</span>
+    <span class="brand__text">
+      <strong>Leandro Batista</strong>
+      <small>Software Engineer</small>
+    </span>
+  </a>
+
+  <nav class="desktop-nav" aria-label="Navegación principal">
+    <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="is-active">
+      <svg lucideHouse [size]="18"></svg>
+      Feed
+    </a>
+    <a routerLink="/" fragment="projects" routerLinkActive="is-active">
+      <svg lucideFolderKanban [size]="18"></svg>
+      Proyectos
+    </a>
+    <a routerLink="/about" routerLinkActive="is-active">
+      <svg lucideUserRound [size]="18"></svg>
+      Perfil
+    </a>
+  </nav>
+
+  <a class="topbar__cta" routerLink="/contact">
+    Hablemos
+    <svg lucideArrowUpRight [size]="18"></svg>
+  </a>
+</header>
+
+<main id="main-content" [class.story-route]="isStoryMode()">
+  <router-outlet />
+</main>
+
+@if (!isStoryMode()) {
+  <nav class="mobile-nav" aria-label="Navegación móvil">
+    <a routerLink="/" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="is-active">
+      <svg lucideHouse [size]="21"></svg>
+      <span>Inicio</span>
+    </a>
+    <a routerLink="/" fragment="projects">
+      <svg lucideFolderKanban [size]="21"></svg>
+      <span>Proyectos</span>
+    </a>
+    <a routerLink="/about" routerLinkActive="is-active">
+      <svg lucideUserRound [size]="21"></svg>
+      <span>Perfil</span>
+    </a>
+    <a routerLink="/contact" routerLinkActive="is-active">
+      <svg lucideMail [size]="21"></svg>
+      <span>Contacto</span>
+    </a>
+  </nav>
+}
