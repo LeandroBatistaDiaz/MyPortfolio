@@ -36,17 +36,14 @@
 
 .topbar--story {
   border-color: transparent;
-  background: linear-gradient(180deg, rgb(4 7 15 / 78%), transparent);
+  background: transparent;
+  backdrop-filter: none;
 }
 
 :root[data-theme='light'] .topbar--story {
   border-color: transparent;
-  background: linear-gradient(180deg, rgb(244 247 251 / 88%), transparent);
-}
-
-:root[data-theme='light'] .topbar--story {
-  border-color: transparent;
-  background: linear-gradient(180deg, rgb(244 247 251 / 88%), transparent);
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .brand { display: inline-flex; align-items: center; gap: 0.75rem; }

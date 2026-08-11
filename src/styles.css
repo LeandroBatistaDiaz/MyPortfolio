@@ -154,7 +154,8 @@ button { border: 0; }
 /* Project story theme overrides live globally because component-scoped CSS cannot scope :root reliably. */
 :root[data-theme='light'] .topbar--story {
   border-color: transparent;
-  background: linear-gradient(180deg, rgb(244 247 251 / 88%), transparent);
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .story-slide__visual--screenshot { background: #f6f8fb; }

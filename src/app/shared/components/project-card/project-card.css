@@ -25,8 +25,8 @@
 .project-card__identity small { overflow: hidden; margin-top: 0.3rem; color: var(--muted); font-size: 0.66rem; text-overflow: ellipsis; white-space: nowrap; }
 .project-card__verified { display: inline-flex; align-items: center; gap: 0.35rem; margin-left: auto; color: var(--muted); font-size: 0.66rem; font-weight: 800; }
 .project-card__copy { padding: 0.75rem 1.1rem 1.15rem; }
-.project-card__copy h2 { max-width: 16ch; margin: 0.7rem 0 0; font-size: clamp(1.45rem, 3vw, 2.35rem); line-height: 1.02; letter-spacing: -0.045em; }
-.project-card__copy p { max-width: 64ch; margin: 0.8rem 0 0; color: var(--muted); font-size: 0.84rem; line-height: 1.65; }
+.project-card__copy h2 { max-width: 100%; margin: 0.7rem 0 0; font-size: clamp(1.45rem, 3vw, 2.35rem); line-height: 1.02; letter-spacing: -0.045em; }
+.project-card__copy p { max-width: 64ch; margin: 0.8rem 0 0; color: var(--muted); font-size: clamp(0.9rem, 1.25vw, 0.98rem); line-height: 1.65; }
 .project-card__media { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10; background: var(--surface-strong); }
 .project-card__media img { width: 100%; height: 100%; object-fit: cover; transition: scale 500ms cubic-bezier(.2,.8,.2,1); animation: project-card-image-zoom 18s ease-in-out infinite; transform-origin: center; will-change: transform; }
 .project-card__media:hover img { scale: 1.035; }
@@ -48,7 +48,7 @@
 
 @media (max-width: 720px) {
   .project-card { border-inline: 0; border-radius: 0; }
-  .project-card__copy h2 { max-width: 18ch; }
+  .project-card__copy h2 { max-width: 100%; }
   .project-card__verified { font-size: 0; }
   .project-card__verified svg { width: 18px; height: 18px; }
   .project-card__media { aspect-ratio: 4 / 5; }
