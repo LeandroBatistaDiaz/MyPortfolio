@@ -65,7 +65,7 @@ export class App {
     if (!this.router.url.startsWith('/about')) return;
 
     event.preventDefault();
-    this.router.navigateByUrl('/');
+    if (isPlatformBrowser(this.platformId)) window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   private getInitialTheme(): Theme {
