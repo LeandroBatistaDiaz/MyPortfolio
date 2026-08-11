@@ -24,10 +24,27 @@
     </a>
   </nav>
 
-  <a class="topbar__cta" routerLink="/contact">
-    Hablemos
-    <svg lucideArrowUpRight [size]="18"></svg>
-  </a>
+  <div class="topbar__actions">
+    <button
+      class="theme-toggle"
+      type="button"
+      [attr.aria-label]="theme() === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'"
+      [attr.title]="theme() === 'dark' ? 'Modo claro' : 'Modo oscuro'"
+      (click)="toggleTheme()"
+    >
+      @if (theme() === 'dark') {
+        <svg lucideSun [size]="17"></svg>
+        <span class="theme-toggle__label">Claro</span>
+      } @else {
+        <svg lucideMoon [size]="17"></svg>
+        <span class="theme-toggle__label">Oscuro</span>
+      }
+    </button>
+    <a class="topbar__cta" routerLink="/contact">
+      Hablemos
+      <svg lucideArrowUpRight [size]="18"></svg>
+    </a>
+  </div>
 </header>
 
 <main id="main-content" [class.story-route]="isStoryMode()">

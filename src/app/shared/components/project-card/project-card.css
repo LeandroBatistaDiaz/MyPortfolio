@@ -18,6 +18,8 @@
   font-size: 0.72rem;
   font-weight: 950;
 }
+.project-card__avatar img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
+.project-card__avatar img { width: 100%; height: 100%; border-radius: inherit; object-fit: cover; }
 .project-card__identity { display: grid; min-width: 0; line-height: 1.15; }
 .project-card__identity strong { font-size: 0.8rem; }
 .project-card__identity small { overflow: hidden; margin-top: 0.3rem; color: var(--muted); font-size: 0.66rem; text-overflow: ellipsis; white-space: nowrap; }
