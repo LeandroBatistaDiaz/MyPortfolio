@@ -11,7 +11,7 @@
       }
     </div>
 
-    <a class="story__back" routerLink="/" fragment="projects">
+    <a class="story__back" routerLink="/" fragment="projects" (click)="goBack($event)" aria-label="Volver a la página anterior">
       <svg lucideArrowLeft [size]="18"></svg>
       <span>Volver al feed</span>
     </a>

@@ -15,7 +15,7 @@ import {
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Meta, Title } from '@angular/platform-browser';
-import { ActivatedRoute, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import {
   LucideArrowLeft,
   LucideArrowUpRight,
@@ -46,6 +46,7 @@ import { PortfolioService } from '../../core/services/portfolio.service';
 })
 export class ProjectDetailPage implements AfterViewInit {
   private readonly route = inject(ActivatedRoute);
+  private readonly router = inject(Router);
   private readonly portfolio = inject(PortfolioService);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly title = inject(Title);
@@ -104,5 +105,18 @@ export class ProjectDetailPage implements AfterViewInit {
     const slides = this.storySlides?.toArray() ?? [];
     const safeIndex = Math.max(0, Math.min(index, slides.length - 1));
     slides[safeIndex]?.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  goBack(event: MouseEvent): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    const navigationId = Number(window.history.state?.navigationId ?? 0);
+    if (navigationId > 1) {
+      event.preventDefault();
+      window.history.back();
+      return;
+    }
+
+    this.router.navigate(['/'], { fragment: 'projects' });
   }
 }
