@@ -193,6 +193,58 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     ],
     disclaimer: 'Caso anonimizado. La imagen y la interfaz son conceptuales y no contienen información empresarial.',
   },
+  {
+    slug: 'measurement-quotation-system',
+    title: 'Plataforma de levantamientos y cotizaciones',
+    shortTitle: 'Measurement & Quotation',
+    category: 'Proyecto de grado · Automatización operativa',
+    summary:
+      'Software aplicado para digitalizar el levantamiento de medidas y la generación de cotizaciones en una empresa de puertas y ventanas.',
+    role: 'Coautor · Software Developer',
+    period: 'Proyecto de grado · Enero–abril 2025',
+    cover: '/images/tesis-fcm-context.webp',
+    accent: 'violet',
+    technologies: ['Angular', '.NET 8', 'SQL Server', 'Entity Framework', 'REST APIs'],
+    capabilities: ['Levantamientos de medidas', 'Cotizaciones', 'Roles y permisos', 'Reportes operativos'],
+    slides: [
+      {
+        image: '/images/tesis-fcm-context.webp',
+        imageAlt: 'Diagrama de contexto de una plataforma de gestión de medidas y cotizaciones.',
+        label: '01 · Contexto',
+        title: 'Del levantamiento en campo a una cotización trazable',
+        body:
+          'El proceso partía de órdenes y medidas recogidas en campo y necesitaba convertir esos datos en cotizaciones claras, evitando transcripciones manuales, retrasos y pérdida de seguimiento.',
+        bullets: ['Medidas en campo', 'Órdenes de trabajo', 'Cotización centralizada'],
+      },
+      {
+        image: '/images/tesis-fcm-architecture.webp',
+        imageAlt: 'Diagrama de arquitectura DDD con Web API .NET 8, dominio, servicios de aplicación, persistencia y base de datos.',
+        label: '02 · Solución',
+        title: 'Un flujo digital que conecta operación y ventas',
+        body:
+          'La solución unificó la creación de órdenes, el registro de medidas, la selección de artículos, la generación y entrega de cotizaciones y la consulta de reportes.',
+        bullets: ['Roles y permisos', 'Notificaciones', 'Reportes operativos'],
+      },
+      {
+        image: '/images/tesis-fcm-entity-relationship.webp',
+        imageAlt: 'Diagrama entidad-relación con clientes, artículos, levantamientos, cotizaciones y usuarios.',
+        label: '03 · Arquitectura y datos',
+        title: 'DDD, API REST y un modelo relacional con integridad',
+        body:
+          'El backend en .NET 8 separa dominio, servicios de aplicación y persistencia; Angular consume la API y SQL Server mantiene las relaciones entre clientes, artículos, levantamientos y cotizaciones mediante Entity Framework Core.',
+        bullets: ['Domain / App Service / Persistence', 'Migraciones EF Core', 'Integridad referencial'],
+      },
+      {
+        label: '04 · Resultado',
+        title: 'Una base mantenible para automatizar un proceso crítico',
+        body:
+          'Como proyecto de grado aplicado, la solución transformó un flujo manual en un proceso digital trazable, con una base preparada para evolucionar junto a la operación de la empresa.',
+        metricLabel: 'Resultado cualitativo',
+        metricValue: 'Flujo operativo digitalizado',
+      },
+    ],
+    disclaimer: 'Proyecto de grado aplicado y caso anonimizado. Los diagramas proceden de la documentación académica; se omitieron datos operativos y personales.',
+  },
 ];
 
 export const CORE_TECHNOLOGIES = [
