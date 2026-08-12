@@ -3,7 +3,8 @@
 .about-hero__identity { display: flex; align-items: center; gap: 1rem; }
 .about-hero__portrait { width: clamp(5.4rem, 10vw, 8rem); aspect-ratio: 1; border: 3px solid color-mix(in srgb, var(--mint) 62%, transparent); border-radius: 1.6rem; object-fit: cover; box-shadow: 0 18px 45px rgb(0 0 0 / 22%); }
 .about-hero__role { margin: 0.6rem 0 0; color: var(--muted); font-size: clamp(0.82rem, 1.6vw, 1.05rem); font-weight: 800; letter-spacing: 0.01em; }
-.about-hero h1.about-hero__headline { max-width: 42ch; margin: 1.35rem 0 0; font-size: clamp(1.8rem, 3.2vw, 3.2rem); line-height: 1.08; letter-spacing: -0.045em; text-wrap: balance; }
+.about-hero h1.about-hero__headline { max-width: 48ch; margin: 1.35rem 0 0; color: var(--text); font-size: clamp(1.55rem, 2.6vw, 2.65rem); line-height: 1.12; letter-spacing: -0.035em; text-wrap: balance; }
+:root[data-theme='light'] .about-hero h1.about-hero__headline { color: #111827; }
 .about-hero > div > p { max-width: 65ch; margin: 1.25rem 0 0; color: var(--muted); line-height: 1.7; }
 .about-hero__actions { display: flex; flex-wrap: wrap; gap: 0.65rem; margin-top: 1.5rem; }
 .about-hero__facts { display: grid; align-content: center; gap: 0.75rem; }
@@ -58,7 +59,7 @@
 }
 @media (max-width: 720px) {
   .about-hero { padding: 1.4rem 1rem 1.8rem; }
-  .about-hero h1.about-hero__headline { font-size: clamp(1.8rem, 8vw, 2.7rem); }
+  .about-hero h1.about-hero__headline { font-size: clamp(1.55rem, 7vw, 2.2rem); }
   .about-hero__portrait { width: 5.5rem; border-radius: 1.2rem; }
   .about-hero__facts { grid-template-columns: 1fr; }
   .timeline, .skill-card, .education-card { border-inline: 0; }
