@@ -30,6 +30,16 @@
 .project-card__media { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10; background: var(--surface-strong); }
 .project-card__media img { width: 100%; height: 100%; object-fit: cover; transition: scale 500ms cubic-bezier(.2,.8,.2,1); animation: project-card-image-zoom 18s ease-in-out infinite; transform-origin: center; will-change: transform; }
 .project-card__media:hover img { scale: 1.035; }
+.project-card__placeholder { display: grid; width: 100%; height: 100%; place-content: center; justify-items: center; gap: 0.6rem; background:
+  radial-gradient(circle at 24% 20%, rgb(77 143 255 / 24%), transparent 30%),
+  radial-gradient(circle at 78% 72%, rgb(94 229 189 / 20%), transparent 30%),
+  linear-gradient(135deg, #0f1a2d, #162640); color: rgb(255 255 255 / 82%); }
+.project-card__placeholder::before,
+.project-card__placeholder::after { position: absolute; border: 1px solid rgb(255 255 255 / 14%); border-radius: 1rem; content: ''; }
+.project-card__placeholder::before { width: 38%; height: 42%; translate: -24% -10%; }
+.project-card__placeholder::after { width: 28%; height: 30%; translate: 52% 38%; }
+.project-card__placeholder svg { color: var(--mint); filter: drop-shadow(0 8px 20px rgb(94 229 189 / 28%)); }
+.project-card__placeholder small { font-size: 0.7rem; font-weight: 850; letter-spacing: 0.06em; text-transform: uppercase; }
 .project-card__media-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 46%, rgb(2 4 10 / 78%)); }
 .project-card__number { position: absolute; top: 1rem; left: 1rem; color: rgb(255 255 255 / 82%); font-size: 0.72rem; font-weight: 950; letter-spacing: 0.16em; }
 .project-card__open { position: absolute; right: 1rem; bottom: 1rem; left: 1rem; display: flex; align-items: center; justify-content: space-between; color: white; font-size: 0.76rem; font-weight: 900; }

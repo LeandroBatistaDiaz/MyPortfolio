@@ -1,250 +1,115 @@
 import { PortfolioProject } from '../models/project.model';
 
+const PROJECT_TEMPLATE_SLIDES = [
+  {
+    label: '01 · Contexto',
+    title: 'Contexto del proyecto',
+    body: 'Este espacio está preparado para presentar el problema de negocio, los usuarios y el objetivo del próximo caso de estudio.',
+    bullets: ['Reto por documentar', 'Usuarios por definir', 'Alcance pendiente'],
+  },
+  {
+    label: '02 · Solución',
+    title: 'Proceso y experiencia',
+    body: 'Aquí se documentará el flujo principal, las decisiones de producto y las pantallas autorizadas que expliquen la solución de forma clara.',
+    bullets: ['Flujo principal', 'Decisiones de UX', 'Evidencia visual'],
+  },
+  {
+    label: '03 · Arquitectura',
+    title: 'Arquitectura y tecnologías',
+    body: 'La plantilla admite la descripción de las capas, integraciones, decisiones técnicas y tecnologías que correspondan al proyecto.',
+    bullets: ['Componentes', 'Integraciones', 'Calidad técnica'],
+  },
+  {
+    label: '04 · Resultado',
+    title: 'Resultado y aprendizaje',
+    body: 'Este cierre recogerá los resultados verificables, el impacto cualitativo y los siguientes pasos, sin inventar métricas.',
+    metricLabel: 'Estado',
+    metricValue: 'Pendiente de documentar',
+  },
+] as const;
+
+const createProjectTemplate = (
+  slug: string,
+  accent: PortfolioProject['accent'],
+): PortfolioProject => ({
+  slug,
+  title: 'Próximo caso de estudio',
+  shortTitle: 'Próximamente',
+  category: 'Plantilla reutilizable',
+  summary:
+    'Espacio preparado para incorporar un proyecto con información, capturas y resultados autorizados.',
+  role: 'Contenido pendiente',
+  period: 'En preparación',
+  accent,
+  technologies: [],
+  capabilities: ['Contexto', 'Solución', 'Arquitectura', 'Resultado'],
+  slides: PROJECT_TEMPLATE_SLIDES,
+  disclaimer:
+    'Plantilla vacía. Se completará únicamente con información confirmada y recursos visuales autorizados.',
+  isPlaceholder: true,
+});
+
 export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
   {
-    slug: 'vehicle-backed-lending-platform',
-    title: 'Plataforma de préstamos con garantía vehicular',
-    shortTitle: 'Lending Platform',
-    category: 'Fintech · Sistema empresarial',
+    slug: 'gi-medical-management',
+    title: 'GI Medical Management',
+    shortTitle: 'GI Medical',
+    category: 'HealthTech · Facturación clínica',
     summary:
-      'Una plataforma centralizada para gestionar el ciclo completo de préstamos respaldados por vehículos: clientes, garantías, cuotas, pagos, moras y seguimiento legal.',
+      'Plataforma web para centralizar la facturación de servicios médicos con seguros, la operación clínica y el seguimiento financiero.',
     role: 'Full Stack .NET Developer',
-    period: 'Caso de estudio · 2023–2025',
-    cover: '/images/project-lending.webp',
-    accent: 'blue',
-    technologies: ['Angular', '.NET', 'REST APIs', 'SQL Server', 'Entity Framework', 'JWT'],
-    capabilities: ['Préstamos y cuotas', 'Garantías vehiculares', 'Pagos y moras', 'Notificaciones legales'],
-    slides: [
-      {
-        label: '01 · Contexto',
-        title: 'Un proceso financiero con demasiadas piezas desconectadas',
-        body:
-          'La operación necesitaba reunir en un único flujo la información de clientes, vehículos en garantía, préstamos, vencimientos, pagos y seguimiento de incidencias.',
-        bullets: ['Trazabilidad del préstamo', 'Estado de cada garantía', 'Visión operativa compartida'],
-      },
-      {
-        label: '02 · Solución',
-        title: 'Un núcleo operativo diseñado alrededor del ciclo del préstamo',
-        body:
-          'Diseñé y desarrollé funcionalidades que conectan el alta del cliente con la evaluación de la garantía, la planificación de cuotas y el registro de pagos y moras.',
-        metricLabel: 'Enfoque',
-        metricValue: 'Flujo de extremo a extremo',
-      },
-      {
-        label: '03 · Arquitectura',
-        title: 'Frontend desacoplado, API REST y un modelo de datos consistente',
-        body:
-          'Angular concentra la experiencia operativa; la API en .NET encapsula reglas de negocio y acceso a datos, con SQL Server como fuente central de información.',
-        bullets: ['Autenticación JWT', 'Entity Framework', 'Separación de responsabilidades'],
-      },
-      {
-        label: '04 · Resultado',
-        title: 'Una operación más clara, trazable y preparada para evolucionar',
-        body:
-          'La solución consolidó procesos que antes requerían múltiples seguimientos y proporcionó una base mantenible para incorporar nuevas reglas y reportes.',
-        metricLabel: 'Resultado cualitativo',
-        metricValue: 'Control centralizado',
-      },
-    ],
-    disclaimer: 'Caso anonimizado. La interfaz mostrada es conceptual y no reproduce datos ni pantallas del cliente.',
-  },
-  {
-    slug: 'industrial-manufacturing-erp',
-    title: 'ERP industrial para fabricación e inventario',
-    shortTitle: 'Manufacturing ERP',
-    category: 'Industria · ERP',
-    summary:
-      'Una solución empresarial que conecta almacén, inventario, facturación y producción mediante composición de artículos y listas de materiales.',
-    role: 'Software Developer · .NET',
-    period: 'Caso de estudio · 2023–2025',
-    cover: '/images/project-erp.webp',
+    period: 'Caso de estudio · Proyecto empresarial',
+    cover: '/images/gi-medical-dashboard.png',
     accent: 'mint',
-    technologies: ['Angular', '.NET 8', 'SQL Server', 'Entity Framework', 'REST APIs', 'SOLID'],
-    capabilities: ['Inventario', 'Producción', 'Listas de materiales', 'Facturación'],
+    technologies: ['Angular', '.NET', 'SQL Server', 'Entity Framework', 'REST APIs', 'JWT', 'Clean Architecture'],
+    capabilities: ['Facturación con seguros', 'Gestión de pacientes', 'Asignación operativa', 'Reportes y KPI'],
     slides: [
       {
-        image: '/images/project-erp-dashboard.png',
-        imageAlt: 'Dashboard general del ERP industrial con resumen de ventas, caja e inventario.',
-        label: '01 · Dominio',
-        title: 'Fabricar exige conocer qué entra, qué se transforma y qué queda disponible',
+        image: '/images/gi-medical-dashboard.png',
+        imageAlt: 'Dashboard anonimizado de facturación clínica con indicadores, tendencia anual y distribución de servicios.',
+        label: '01 · Visibilidad operativa',
+        title: 'Indicadores y tendencias para entender la operación de un vistazo',
         body:
-          'El sistema debía representar artículos compuestos, materiales, movimientos de almacén, productos terminados y su impacto en inventario y facturación.',
-        bullets: ['Materias primas', 'Artículos compuestos', 'Existencias y movimientos'],
+          'El dashboard reúne indicadores de facturación por periodo, la evolución de los últimos doce meses y el histórico completo. El desglose de servicios más facturados ayuda a identificar patrones de demanda sin separar la lectura financiera de la operativa.',
+        bullets: ['KPI de hoy, ayer y última semana', 'Tendencia mensual e histórico completo', 'Distribución de servicios facturados'],
       },
       {
-        label: '02 · Diseño',
-        title: 'El producto como composición, no solo como una referencia',
+        image: '/images/gi-medical-billing.png',
+        imageAlt: 'Pantalla anonimizada de facturación de servicios médicos con datos del paciente, cobertura y servicios.',
+        label: '02 · Facturación',
+        title: 'Un flujo guiado desde el paciente hasta el registro de servicios',
         body:
-          'La solución incorpora listas de materiales para relacionar cada producto fabricado con los componentes que consume y mantener coherencia entre producción e inventario.',
-        metricLabel: 'Modelo central',
-        metricValue: 'Bill of Materials (BOM)',
-        image: '/images/project-erp-billing.png',
-        imageAlt: 'Pantalla de facturaciÃ³n del ERP industrial con artÃ­culos, cantidades y resumen de venta.',
+          'La experiencia permite localizar o registrar al paciente, asociar su cobertura médica y seleccionar los servicios realizados. El operador revisa copagos, montos cubiertos y el total antes de registrar la factura, reduciendo pasos manuales dentro del punto de atención.',
+        bullets: ['Búsqueda y registro de pacientes', 'Cobertura médica y copagos', 'Servicios, cantidades y total de la factura'],
       },
       {
-        label: '03 · Implementación',
-        title: 'Módulos conectados sobre una misma fuente de verdad',
+        image: '/images/gi-medical-reports.png',
+        imageAlt: 'Pantalla anonimizada de reportes de facturación clínica con filtros por fecha y exportación.',
+        label: '03 · Reportes',
+        title: 'Reportes exportables para seguimiento financiero y operativo',
         body:
-          'Angular, .NET 8 y SQL Server sostienen una arquitectura modular en la que almacén, producción y facturación comparten reglas y datos consistentes.',
-        bullets: ['API REST', 'Reglas de negocio', 'Validación funcional'],
+          'El módulo de reportes organiza la facturación general, la facturación por servicio y la facturación por aseguradora. Los filtros por periodo y la exportación a Excel o PDF facilitan el análisis y el intercambio de información sin depender de consolidaciones manuales.',
+        bullets: ['Facturación general, por servicio y por aseguradora', 'Filtros por rango de fechas', 'Exportación a Excel y PDF'],
       },
       {
-        label: '04 · Resultado',
-        title: 'Una visión integrada de la operación industrial',
+        image: '/images/gi-medical-login.png',
+        imageAlt: 'Acceso anonimizado a la plataforma clínica.',
+        label: '04 · Arquitectura y seguridad',
+        title: 'Una base cliente-servidor pensada para procesos sensibles',
         body:
-          'El ERP permite seguir el flujo desde los materiales disponibles hasta el producto facturable, reduciendo la fragmentación entre áreas operativas.',
+          'La solución combina Angular y .NET en una arquitectura cliente-servidor, con SQL Server y Entity Framework Core para la persistencia. Clean Architecture mantiene separadas las responsabilidades; JWT, gestión de usuarios, asignación de operarios y médicos lectores, copias de seguridad y controles de acceso refuerzan la operación.',
+        bullets: ['Clean Architecture y API REST', 'JWT, usuarios y permisos', 'Asignación de operarios y médicos lectores', 'Gestión de caja, lecturas y respaldos'],
         metricLabel: 'Resultado cualitativo',
-        metricValue: 'Operación integrada',
+        metricValue: 'Operación clínica y financiera conectada',
       },
     ],
-    disclaimer: 'Caso anonimizado. Los recursos visuales son representaciones conceptuales creadas para este portafolio.',
+    disclaimer:
+      'Caso empresarial anonimizado. Las capturas se han tratado para ocultar identidad, datos clínicos, usuarios e importes; no contienen información de pacientes.',
   },
-  {
-    slug: 'clinical-billing-operations',
-    title: 'Facturación y operaciones para un centro diagnóstico',
-    shortTitle: 'Clinical Operations',
-    category: 'HealthTech · Gestión clínica',
-    summary:
-      'Un sistema para conectar facturación, pacientes, aseguradoras, estudios clínicos y la trazabilidad de los profesionales responsables de cada lectura.',
-    role: 'Full Stack .NET Developer',
-    period: 'Caso de estudio · 2023–2025',
-    cover: '/images/project-clinical.webp',
-    accent: 'violet',
-    technologies: ['Angular', '.NET 8', 'SQL Server', 'REST APIs', 'Entity Framework'],
-    capabilities: ['Pacientes', 'Aseguradoras', 'Estudios clínicos', 'Facturación'],
-    slides: [
-      {
-        label: '01 · Contexto',
-        title: 'La información clínica y administrativa debía avanzar en el mismo flujo',
-        body:
-          'La operación requería relacionar pacientes, cobertura de aseguradoras, estudios realizados, facturación y médicos responsables de la interpretación.',
-        bullets: ['Datos del paciente', 'Cobertura y facturación', 'Trazabilidad de estudios'],
-      },
-      {
-        label: '02 · Solución',
-        title: 'Una experiencia operativa centrada en el recorrido del estudio',
-        body:
-          'La aplicación organiza la información desde el registro del paciente hasta la lectura del estudio, manteniendo conectados los procesos clínicos y administrativos.',
-        metricLabel: 'Eje funcional',
-        metricValue: 'Trazabilidad clínica',
-      },
-      {
-        label: '03 · Tecnología',
-        title: 'Una plataforma web modular y preparada para mantener reglas sensibles',
-        body:
-          'La interfaz Angular consume servicios .NET 8 respaldados por SQL Server, separando las responsabilidades de presentación, dominio y persistencia.',
-        bullets: ['Modelado relacional', 'Servicios REST', 'Validaciones de negocio'],
-      },
-      {
-        label: '04 · Resultado',
-        title: 'Menos fragmentación entre atención, lectura y facturación',
-        body:
-          'El sistema consolidó datos relacionados y facilitó el seguimiento de cada estudio sin exponer información clínica fuera de su contexto operativo.',
-        metricLabel: 'Resultado cualitativo',
-        metricValue: 'Información conectada',
-      },
-    ],
-    disclaimer: 'Caso anonimizado. No se muestran pacientes, información clínica ni interfaces reales.',
-  },
-  {
-    slug: 'warehouse-management-system',
-    title: 'Sistema web para gestión de almacenes',
-    shortTitle: 'Warehouse System',
-    category: 'Logística · Inventario',
-    summary:
-      'Una aplicación web orientada al control de inventario y las operaciones de stock, construida con Blazor y una API en ASP.NET.',
-    role: '.NET Developer',
-    period: 'Caso de estudio · 2023–2025',
-    cover: '/images/project-warehouse.webp',
-    accent: 'coral',
-    technologies: ['Blazor', 'ASP.NET Web API', 'C#', 'SQL Server', 'Entity Framework'],
-    capabilities: ['Stock', 'Entradas y salidas', 'Trazabilidad', 'Operaciones de almacén'],
-    slides: [
-      {
-        label: '01 · Necesidad',
-        title: 'El inventario solo es útil cuando cada movimiento queda explicado',
-        body:
-          'El proyecto debía ofrecer una visión clara de existencias y operaciones, evitando que entradas, salidas y ajustes quedaran aislados del estado real del almacén.',
-        bullets: ['Existencias', 'Movimientos', 'Historial operativo'],
-      },
-      {
-        label: '02 · Solución',
-        title: 'Un flujo web directo para las tareas cotidianas del almacén',
-        body:
-          'La experiencia se organizó alrededor de consultas rápidas, movimientos de stock y validaciones que protegen la consistencia del inventario.',
-        metricLabel: 'Prioridad',
-        metricValue: 'Claridad operativa',
-      },
-      {
-        label: '03 · Arquitectura',
-        title: 'Blazor para la interfaz y ASP.NET Web API para el dominio',
-        body:
-          'La separación entre experiencia web, lógica de negocio y persistencia permitió mantener el sistema y extender nuevas operaciones sin acoplar las capas.',
-        bullets: ['Componentes reutilizables', 'Servicios REST', 'Acceso a datos'],
-      },
-      {
-        label: '04 · Resultado',
-        title: 'Una base mantenible para gestionar inventario con confianza',
-        body:
-          'El producto convirtió las operaciones de almacén en un proceso trazable y proporcionó una estructura clara para evolucionar reglas y reportes.',
-        metricLabel: 'Resultado cualitativo',
-        metricValue: 'Inventario trazable',
-      },
-    ],
-    disclaimer: 'Caso anonimizado. La imagen y la interfaz son conceptuales y no contienen información empresarial.',
-  },
-  {
-    slug: 'measurement-quotation-system',
-    title: 'Plataforma de levantamientos y cotizaciones',
-    shortTitle: 'Measurement & Quotation',
-    category: 'Proyecto de grado · Automatización operativa',
-    summary:
-      'Software aplicado para digitalizar el levantamiento de medidas y la generación de cotizaciones en una empresa de puertas y ventanas.',
-    role: 'Coautor · Software Developer',
-    period: 'Proyecto de grado · Enero–abril 2025',
-    cover: '/images/tesis-fcm-context.webp',
-    accent: 'violet',
-    technologies: ['Angular', '.NET 8', 'SQL Server', 'Entity Framework', 'REST APIs'],
-    capabilities: ['Levantamientos de medidas', 'Cotizaciones', 'Roles y permisos', 'Reportes operativos'],
-    slides: [
-      {
-        image: '/images/tesis-fcm-context.webp',
-        imageAlt: 'Diagrama de contexto de una plataforma de gestión de medidas y cotizaciones.',
-        label: '01 · Contexto',
-        title: 'Del levantamiento en campo a una cotización trazable',
-        body:
-          'El proceso partía de órdenes y medidas recogidas en campo y necesitaba convertir esos datos en cotizaciones claras, evitando transcripciones manuales, retrasos y pérdida de seguimiento.',
-        bullets: ['Medidas en campo', 'Órdenes de trabajo', 'Cotización centralizada'],
-      },
-      {
-        image: '/images/tesis-fcm-architecture.webp',
-        imageAlt: 'Diagrama de arquitectura DDD con Web API .NET 8, dominio, servicios de aplicación, persistencia y base de datos.',
-        label: '02 · Solución',
-        title: 'Un flujo digital que conecta operación y ventas',
-        body:
-          'La solución unificó la creación de órdenes, el registro de medidas, la selección de artículos, la generación y entrega de cotizaciones y la consulta de reportes.',
-        bullets: ['Roles y permisos', 'Notificaciones', 'Reportes operativos'],
-      },
-      {
-        image: '/images/tesis-fcm-entity-relationship.webp',
-        imageAlt: 'Diagrama entidad-relación con clientes, artículos, levantamientos, cotizaciones y usuarios.',
-        label: '03 · Arquitectura y datos',
-        title: 'DDD, API REST y un modelo relacional con integridad',
-        body:
-          'El backend en .NET 8 separa dominio, servicios de aplicación y persistencia; Angular consume la API y SQL Server mantiene las relaciones entre clientes, artículos, levantamientos y cotizaciones mediante Entity Framework Core.',
-        bullets: ['Domain / App Service / Persistence', 'Migraciones EF Core', 'Integridad referencial'],
-      },
-      {
-        label: '04 · Resultado',
-        title: 'Una base mantenible para automatizar un proceso crítico',
-        body:
-          'Como proyecto de grado aplicado, la solución transformó un flujo manual en un proceso digital trazable, con una base preparada para evolucionar junto a la operación de la empresa.',
-        metricLabel: 'Resultado cualitativo',
-        metricValue: 'Flujo operativo digitalizado',
-      },
-    ],
-    disclaimer: 'Proyecto de grado aplicado y caso anonimizado. Los diagramas proceden de la documentación académica; se omitieron datos operativos y personales.',
-  },
+  createProjectTemplate('vehicle-backed-lending-platform', 'blue'),
+  createProjectTemplate('industrial-manufacturing-erp', 'mint'),
+  createProjectTemplate('warehouse-management-system', 'coral'),
+  createProjectTemplate('measurement-quotation-system', 'violet'),
 ];
 
 export const CORE_TECHNOLOGIES = [

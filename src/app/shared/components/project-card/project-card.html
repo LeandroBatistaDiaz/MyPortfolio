@@ -7,9 +7,9 @@
       <strong>Leandro Batista</strong>
       <small>{{ project().role }} · Caso {{ index() + 1 | number: '2.0' }}</small>
     </span>
-    <span class="project-card__verified" title="Caso anonimizado y revisado">
+    <span class="project-card__verified" [title]="project().isPlaceholder ? 'Plantilla preparada para un próximo caso' : 'Caso anonimizado y revisado'">
       <svg lucideShieldCheck [size]="17"></svg>
-      Anonimizado
+      {{ project().isPlaceholder ? 'Plantilla' : 'Anonimizado' }}
     </span>
   </header>
 
@@ -20,17 +20,24 @@
   </div>
 
   <a class="project-card__media" [routerLink]="['/projects', project().slug]" [attr.aria-label]="'Abrir ' + project().title">
-    <img
-      [ngSrc]="project().cover"
-      width="1536"
-      height="1024"
-      [alt]="'Visual conceptual de ' + project().title"
-      [priority]="index() === 0"
-    />
+    @if (project().cover; as cover) {
+      <img
+        [ngSrc]="cover"
+        width="1536"
+        height="1024"
+        [alt]="'Vista anonimizada de ' + project().title"
+        [priority]="index() === 0"
+      />
+    } @else {
+      <span class="project-card__placeholder" aria-hidden="true">
+        <svg lucideLayers [size]="34"></svg>
+        <small>Espacio para evidencia visual</small>
+      </span>
+    }
     <span class="project-card__media-overlay"></span>
     <span class="project-card__number">0{{ index() + 1 }}</span>
     <span class="project-card__open">
-      Ver historia del proyecto
+      {{ project().isPlaceholder ? 'Abrir plantilla' : 'Ver historia del proyecto' }}
       <svg lucideArrowUpRight [size]="18"></svg>
     </span>
   </a>
@@ -50,6 +57,7 @@
             @case ('ASP.NET Web API') { <img src="/icons/dotnet.svg" alt="" /> }
             @case ('REST APIs') { <img src="/icons/swagger.svg" alt="" /> }
             @case ('SQL Server') { <img src="/icons/sql-server.svg" alt="" /> }
+            @case ('Entity Framework') { <img src="/icons/entity-framework.svg" alt="" /> }
             @case ('C#') { <img src="/icons/csharp.svg" alt="" /> }
             @case ('Blazor') { <img src="/icons/blazor.svg" alt="" /> }
           }

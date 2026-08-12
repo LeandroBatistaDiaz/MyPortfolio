@@ -20,14 +20,16 @@
       @for (slide of project.slides; track slide.label; let index = $index; let last = $last) {
         <article #storySlide class="story-slide" [attr.aria-label]="slide.label">
           <div class="story-slide__visual" [class.story-slide__visual--screenshot]="!!slide.image">
-            <img
-              [ngSrc]="slide.image ?? project.cover"
-              width="1536"
-              height="1024"
-              [priority]="index === 0"
-              [attr.alt]="slide.imageAlt ?? ''"
-              [class.story-slide__image--screenshot]="!!slide.image"
-            />
+            @if (slide.image ?? project.cover; as visual) {
+              <img
+                [ngSrc]="visual"
+                width="1536"
+                height="1024"
+                [priority]="index === 0"
+                [attr.alt]="slide.imageAlt ?? ''"
+                [class.story-slide__image--screenshot]="!!slide.image"
+              />
+            }
             <span class="story-slide__veil"></span>
             <div class="story-slide__mockup" aria-hidden="true">
               <span class="mockup__bar"><i></i><i></i><i></i></span>
@@ -89,7 +91,7 @@
                 <svg lucideShieldCheck [size]="19"></svg>
                 <span>{{ project.disclaimer }}</span>
               </div>
-              @if (nextProject(); as next) {
+              @if (!project.isPlaceholder && nextProject(); as next) {
                 <a class="story-slide__next" [routerLink]="['/projects', next.slug]">
                   Siguiente caso · {{ next.shortTitle }}
                   <svg lucideArrowUpRight [size]="18"></svg>
