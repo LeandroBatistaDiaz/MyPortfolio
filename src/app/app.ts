@@ -44,6 +44,10 @@ export class App {
   constructor() {
     this.applyTheme(this.getInitialTheme(), false);
 
+    if (isPlatformBrowser(this.platformId)) {
+      window.setTimeout(() => document.getElementById('app-splash')?.classList.add('is-hidden'), 2000);
+    }
+
     this.router.events
       .pipe(
         filter((event): event is NavigationEnd => event instanceof NavigationEnd),

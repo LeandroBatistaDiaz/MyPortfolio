@@ -19,8 +19,64 @@
     <meta name="twitter:image" content="https://leandro-batista-portfolio.leandrobatistadiaz.chatgpt.site/og.png">
     <link rel="canonical" href="https://leandro-batista-portfolio.leandrobatistadiaz.chatgpt.site/">
     <link rel="icon" type="image/png" href="favicon.png">
+    <script>
+      (() => {
+        try {
+          const theme = window.localStorage.getItem('portfolio-theme');
+          if (theme === 'light' || theme === 'dark') {
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+          }
+        } catch {}
+      })();
+    </script>
+    <style>
+      #app-splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        display: grid;
+        place-items: center;
+        background: #f4f7fb;
+        color: #152238;
+        opacity: 1;
+        transition: opacity .28s ease, visibility .28s ease;
+      }
+      #app-splash.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+      #app-splash__content { display: grid; justify-items: center; gap: .95rem; }
+      #app-splash__mark {
+        display: grid;
+        width: 4.5rem;
+        aspect-ratio: 1;
+        place-items: center;
+        border-radius: 1.35rem;
+        background: linear-gradient(145deg, #2f73e8, #087c68);
+        color: #06111f;
+        font: 950 1.15rem/1 system-ui, sans-serif;
+        letter-spacing: -.04em;
+        box-shadow: 0 20px 50px rgb(47 115 232 / 24%);
+        animation: app-splash-pulse 1.4s ease-in-out infinite;
+      }
+      #app-splash__label { font: 800 .78rem/1 system-ui, sans-serif; letter-spacing: .08em; }
+      #app-splash__bar { width: 5.5rem; height: .18rem; overflow: hidden; border-radius: 999px; background: #d9e3ef; }
+      #app-splash__bar::after { display: block; width: 45%; height: 100%; border-radius: inherit; background: #2f73e8; content: ''; animation: app-splash-progress 1.2s ease-in-out infinite; }
+      :root[data-theme='dark'] #app-splash { background: #070b14; color: #f5f8ff; }
+      :root[data-theme='dark'] #app-splash__bar { background: #182238; }
+      @keyframes app-splash-pulse { 50% { transform: translateY(-4px) scale(1.03); } }
+      @keyframes app-splash-progress { 0% { transform: translateX(-125%); } 100% { transform: translateX(245%); } }
+      @media (prefers-reduced-motion: reduce) {
+        #app-splash__mark, #app-splash__bar::after { animation: none; }
+      }
+    </style>
   </head>
   <body>
+    <div id="app-splash" role="status" aria-label="Cargando portafolio">
+      <div id="app-splash__content">
+        <span id="app-splash__mark">LB</span>
+        <span id="app-splash__label">LEANDRO BATISTA</span>
+        <span id="app-splash__bar" aria-hidden="true"></span>
+      </div>
+    </div>
     <app-root></app-root>
   </body>
 </html>
