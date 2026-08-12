@@ -20,6 +20,7 @@ export interface PortfolioProject {
   readonly role: string;
   readonly period: string;
   readonly cover?: string;
+  readonly coverSequence?: readonly string[];
   readonly accent: ProjectAccent;
   readonly technologies: readonly string[];
   readonly capabilities: readonly string[];

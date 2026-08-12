@@ -60,6 +60,11 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     role: 'Full Stack .NET Developer',
     period: 'Caso de estudio · Proyecto empresarial',
     cover: '/images/gi-medical-dashboard.png',
+    coverSequence: [
+      '/og.png',
+      '/images/gi-medical-dashboard.png',
+      '/images/gi-medical-billing.png',
+    ],
     accent: 'mint',
     technologies: ['Angular', '.NET', 'SQL Server', 'Entity Framework', 'REST APIs', 'JWT', 'Clean Architecture'],
     capabilities: ['Facturación con seguros', 'Gestión de pacientes', 'Asignación operativa', 'Reportes y KPI'],

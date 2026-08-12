@@ -19,8 +19,29 @@
     <p>{{ project().summary }}</p>
   </div>
 
-  <a class="project-card__media" [routerLink]="['/projects', project().slug]" [attr.aria-label]="'Abrir ' + project().title">
-    @if (project().cover; as cover) {
+  <a
+    class="project-card__media"
+    [class.project-card__media--sequence]="project().coverSequence?.length"
+    [routerLink]="['/projects', project().slug]"
+    [attr.aria-label]="'Abrir ' + project().title"
+  >
+    @if (project().coverSequence?.length) {
+      @for (image of project().coverSequence; track image; let frameIndex = $index) {
+        <span
+          class="project-card__cover-frame"
+          [style.animation-delay]="-(frameIndex * 3) + 's'"
+          aria-hidden="true"
+        >
+          <img
+            [ngSrc]="image"
+            width="1536"
+            height="1024"
+            alt=""
+            [priority]="index() === 0 && frameIndex === 0"
+          />
+        </span>
+      }
+    } @else if (project().cover; as cover) {
       <img
         [ngSrc]="cover"
         width="1536"
