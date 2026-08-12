@@ -91,6 +91,25 @@
 
 .topbar__actions { display: inline-flex; align-items: center; gap: 0.55rem; }
 
+.language-toggle {
+  display: inline-flex;
+  min-width: 2.55rem;
+  min-height: 2.55rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--soft-fill);
+  color: var(--text);
+  padding: 0.58rem 0.7rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  transition: 160ms ease;
+}
+.language-toggle:hover { border-color: color-mix(in srgb, var(--mint) 50%, var(--line)); color: var(--mint); transform: translateY(-1px); }
+
 .theme-toggle {
   display: inline-flex;
   min-height: 2.55rem;

@@ -5,18 +5,18 @@
     </span>
     <span class="project-card__identity">
       <strong>Leandro Batista</strong>
-      <small>{{ project().role }} · Caso {{ index() + 1 | number: '2.0' }}</small>
+    <small>{{ language.t(project().role) }} · {{ language.t('Caso') }} {{ index() + 1 | number: '2.0' }}</small>
     </span>
-    <span class="project-card__verified" [title]="project().isPlaceholder ? 'Plantilla preparada para un próximo caso' : 'Caso anonimizado y revisado'">
+    <span class="project-card__verified" [title]="project().isPlaceholder ? language.t('Plantilla preparada para un próximo caso') : language.t('Caso anonimizado y revisado')">
       <svg lucideShieldCheck [size]="17"></svg>
-      {{ project().isPlaceholder ? 'Plantilla' : 'Anonimizado' }}
+      {{ language.t(project().isPlaceholder ? 'Plantilla' : 'Anonimizado') }}
     </span>
   </header>
 
   <div class="project-card__copy">
-    <span class="eyebrow">{{ project().category }}</span>
-    <h2>{{ project().title }}</h2>
-    <p>{{ project().summary }}</p>
+    <span class="eyebrow">{{ language.t(project().category) }}</span>
+    <h2>{{ language.t(project().title) }}</h2>
+    <p>{{ language.t(project().summary) }}</p>
   </div>
 
   <a
@@ -24,7 +24,7 @@
     [class.project-card__media--sequence]="project().coverSequence?.length"
     [class.project-card__media--sequence-four]="project().coverSequence?.length === 4"
     [routerLink]="['/projects', project().slug]"
-    [attr.aria-label]="'Abrir ' + project().title"
+    [attr.aria-label]="language.t('Abrir') + ' ' + language.t(project().title)"
   >
     @if (project().coverSequence?.length) {
       @for (image of project().coverSequence; track image; let frameIndex = $index) {
@@ -52,18 +52,18 @@
     } @else {
       <span class="project-card__placeholder" aria-hidden="true">
         <svg lucideLayers [size]="34"></svg>
-        <small>Espacio para evidencia visual</small>
+        <small>{{ language.t('Espacio para evidencia visual') }}</small>
       </span>
     }
     @if (project().logo; as logo) {
-      <span class="project-card__brand" aria-label="Proyecto desarrollado por JKF Engineering Soft">
+      <span class="project-card__brand" [attr.aria-label]="language.t('Proyecto desarrollado por JKF Engineering Soft')">
         <img [src]="logo" [alt]="project().logoAlt ?? ''" />
       </span>
     }
     <span class="project-card__media-overlay"></span>
     <span class="project-card__number">0{{ index() + 1 }}</span>
     <span class="project-card__open">
-      {{ project().isPlaceholder ? 'Abrir plantilla' : 'Ver historia del proyecto' }}
+      {{ language.t(project().isPlaceholder ? 'Abrir plantilla' : 'Ver historia del proyecto') }}
       <svg lucideArrowUpRight [size]="18"></svg>
     </span>
   </a>
@@ -72,7 +72,7 @@
     <div class="project-card__meta">
     <span class="project-card__capabilities">
       <svg lucideLayers [size]="17"></svg>
-      {{ project().capabilities.slice(0, 2).join(' · ') }}
+      {{ capabilities() }}
     </span>
       @if (project().attribution; as attribution) {
         <span class="project-card__attribution">
@@ -82,11 +82,11 @@
       }
       @if (project().contactCta; as contactCta) {
         <a class="project-card__contact" href="mailto:kelvisferreras@gmail.com" (click)="$event.stopPropagation()">
-          {{ contactCta }}
+          {{ language.t(contactCta) }}
         </a>
       }
     </div>
-    <div class="project-card__tech" aria-label="Tecnologías principales">
+    <div class="project-card__tech" [attr.aria-label]="language.t('Tecnologías principales')">
       @for (technology of project().technologies.slice(0, 3); track technology) {
         <span class="project-tech-badge">
           @switch (technology) {

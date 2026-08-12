@@ -1,43 +1,52 @@
-<a class="skip-link" href="#main-content">Saltar al contenido</a>
+<a class="skip-link" href="#main-content">{{ language.t('Saltar al contenido') }}</a>
 
 <header class="topbar" [class.topbar--story]="isStoryMode()">
-  <a class="brand" routerLink="/" aria-label="Ir al inicio">
+  <a class="brand" routerLink="/" [attr.aria-label]="language.t('Ir al inicio')">
     <span class="brand__mark">LB</span>
     <span class="brand__text">
       <strong>Leandro Batista</strong>
-      <small>Software Engineer</small>
+      <small>{{ language.t('Software Engineer') }}</small>
     </span>
   </a>
 
   <nav class="desktop-nav" aria-label="Navegación principal">
     <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" (click)="goToProjects($event)">
       <svg lucideFolderKanban [size]="18"></svg>
-      Proyectos
+      {{ language.t('Proyectos') }}
     </a>
     <a routerLink="/about" routerLinkActive="is-active" (click)="goToProfile($event)">
       <svg lucideUserRound [size]="18"></svg>
-      Perfil
+      {{ language.t('Perfil') }}
     </a>
   </nav>
 
   <div class="topbar__actions">
     <button
+      class="language-toggle"
+      type="button"
+      [attr.aria-label]="language.language() === 'es' ? 'Switch to English' : 'Cambiar a español'"
+      [attr.title]="language.language() === 'es' ? 'Switch to English' : 'Cambiar a español'"
+      (click)="language.toggle()"
+    >
+      {{ language.language() === 'es' ? 'EN' : 'ES' }}
+    </button>
+    <button
       class="theme-toggle"
       type="button"
-      [attr.aria-label]="theme() === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro'"
-      [attr.title]="theme() === 'dark' ? 'Modo claro' : 'Modo oscuro'"
+      [attr.aria-label]="language.t(theme() === 'dark' ? 'Activar modo claro' : 'Activar modo oscuro')"
+      [attr.title]="language.t(theme() === 'dark' ? 'Modo claro' : 'Modo oscuro')"
       (click)="toggleTheme()"
     >
       @if (theme() === 'dark') {
         <svg lucideSun [size]="17"></svg>
-        <span class="theme-toggle__label">Claro</span>
+        <span class="theme-toggle__label">{{ language.t('Claro') }}</span>
       } @else {
         <svg lucideMoon [size]="17"></svg>
-        <span class="theme-toggle__label">Oscuro</span>
+        <span class="theme-toggle__label">{{ language.t('Oscuro') }}</span>
       }
     </button>
     <a class="topbar__cta" routerLink="/contact">
-      Hablemos
+      {{ language.t('Hablemos') }}
       <svg lucideArrowUpRight [size]="18"></svg>
     </a>
   </div>
@@ -51,15 +60,15 @@
   <nav class="mobile-nav" aria-label="Navegación móvil">
     <a routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" (click)="goToProjects($event)">
       <svg lucideFolderKanban [size]="21"></svg>
-      <span>Proyectos</span>
+      <span>{{ language.t('Proyectos') }}</span>
     </a>
     <a routerLink="/about" routerLinkActive="is-active" (click)="goToProfile($event)">
       <svg lucideUserRound [size]="21"></svg>
-      <span>Perfil</span>
+      <span>{{ language.t('Perfil') }}</span>
     </a>
     <a routerLink="/contact" routerLinkActive="is-active">
       <svg lucideMail [size]="21"></svg>
-      <span>Contacto</span>
+      <span>{{ language.t('Contacto') }}</span>
     </a>
   </nav>
 }

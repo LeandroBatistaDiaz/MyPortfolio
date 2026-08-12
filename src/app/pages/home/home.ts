@@ -10,6 +10,7 @@ import {
   LucideTestTubeDiagonal,
 } from '@lucide/angular';
 import { PortfolioService } from '../../core/services/portfolio.service';
+import { LanguageService } from '../../core/services/language.service';
 import { ProjectCardComponent } from '../../shared/components/project-card/project-card';
 
 @Component({
@@ -32,6 +33,7 @@ export class HomePage {
   private readonly portfolio = inject(PortfolioService);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
+  readonly language = inject(LanguageService);
 
   readonly projects = this.portfolio.featuredProjects;
   readonly technologies = this.portfolio.technologies;

@@ -1,11 +1,11 @@
 @if (project(); as project) {
-  <section class="story" [attr.data-accent]="project.accent" aria-label="Historia del proyecto">
-    <div class="story__progress" [style.grid-template-columns]="'repeat(' + project.slides.length + ', minmax(0, 1fr))'" aria-label="Progreso de la historia">
+  <section class="story" [attr.data-accent]="project.accent" [attr.aria-label]="language.t('Historia del proyecto')">
+    <div class="story__progress" [style.grid-template-columns]="'repeat(' + project.slides.length + ', minmax(0, 1fr))'" [attr.aria-label]="language.t('Progreso de la historia')">
       @for (slide of project.slides; track slide.label; let index = $index) {
         <button
           type="button"
           [class.is-active]="index <= activeIndex()"
-          [attr.aria-label]="'Ir a ' + slide.label"
+          [attr.aria-label]="language.t('Ir a ') + language.t(slide.label)"
           (click)="goToSlide(index)"
         ><span></span></button>
       }
@@ -13,12 +13,12 @@
 
     <a class="story__back" routerLink="/" fragment="projects" (click)="goBack($event)" aria-label="Volver a la página anterior">
       <svg lucideArrowLeft [size]="18"></svg>
-      <span>Volver al feed</span>
+      <span>{{ language.t('Volver al feed') }}</span>
     </a>
 
     <div class="story__slides">
       @for (slide of project.slides; track slide.label; let index = $index; let last = $last) {
-        <article #storySlide class="story-slide" [attr.aria-label]="slide.label">
+        <article #storySlide class="story-slide" [attr.aria-label]="language.t(slide.label)">
           <div class="story-slide__visual" [class.story-slide__visual--screenshot]="!!slide.image">
             @if (slide.image ?? project.cover; as visual) {
               <img
@@ -32,7 +32,7 @@
             }
             <span class="story-slide__veil"></span>
             @if (index === 0 && project.logo; as logo) {
-              <span class="story-slide__brand" aria-label="Proyecto desarrollado por JKF Engineering Soft">
+              <span class="story-slide__brand" [attr.aria-label]="language.t('Proyecto desarrollado por JKF Engineering Soft')">
                 <img [src]="logo" [alt]="project.logoAlt ?? ''" />
               </span>
             }
@@ -46,25 +46,25 @@
           </div>
 
           <div class="story-slide__content">
-            <span class="story-slide__label">{{ slide.label }}</span>
+            <span class="story-slide__label">{{ language.t(slide.label) }}</span>
             @if (index === 0) {
-              <span class="story-slide__category">{{ project.category }}</span>
+              <span class="story-slide__category">{{ language.t(project.category) }}</span>
             }
-            <h1>{{ slide.title }}</h1>
-            <p>{{ slide.body }}</p>
+            <h1>{{ language.t(slide.title) }}</h1>
+            <p>{{ language.t(slide.body) }}</p>
 
             @if (slide.bullets?.length) {
               <ul>
                 @for (bullet of slide.bullets; track bullet) {
-                  <li><svg lucideCircleCheck [size]="17"></svg>{{ bullet }}</li>
+                  <li><svg lucideCircleCheck [size]="17"></svg>{{ language.t(bullet) }}</li>
                 }
               </ul>
             }
 
             @if (slide.metricValue) {
               <dl>
-                <dt>{{ slide.metricLabel }}</dt>
-                <dd>{{ slide.metricValue }}</dd>
+                <dt>{{ language.t(slide.metricLabel ?? '') }}</dt>
+                <dd>{{ language.t(slide.metricValue) }}</dd>
               </dl>
             }
 
@@ -85,7 +85,7 @@
                       @case ('Clean Architecture') { <svg lucideBoxes [size]="16"></svg> }
                       @case ('Unit Testing') { <svg lucideTestTubeDiagonal [size]="16"></svg> }
                     }
-                    {{ technology }}
+                    {{ language.t(technology) }}
                   </span>
                 }
               </div>
@@ -94,11 +94,11 @@
             @if (last) {
               <div class="story-slide__disclaimer">
                 <svg lucideShieldCheck [size]="19"></svg>
-                <span>{{ project.disclaimer }}</span>
+                <span>{{ language.t(project.disclaimer) }}</span>
               </div>
               @if (!project.isPlaceholder && nextProject(); as next) {
                 <a class="story-slide__next" [routerLink]="['/projects', next.slug]">
-                  Siguiente caso · {{ next.shortTitle }}
+                  {{ language.t('Siguiente caso · ') }}{{ language.t(next.shortTitle) }}
                   <svg lucideArrowUpRight [size]="18"></svg>
                 </a>
               }
@@ -107,10 +107,10 @@
 
           <aside class="story-slide__rail" aria-label="Navegación de la historia">
             <span>{{ index + 1 }}/{{ project.slides.length }}</span>
-            <button type="button" [disabled]="index === 0" aria-label="Diapositiva anterior" (click)="goToSlide(index - 1)">
+            <button type="button" [disabled]="index === 0" [attr.aria-label]="language.t('Diapositiva anterior')" (click)="goToSlide(index - 1)">
               <svg lucideChevronUp [size]="22"></svg>
             </button>
-            <button type="button" [disabled]="last" aria-label="Diapositiva siguiente" (click)="goToSlide(index + 1)">
+            <button type="button" [disabled]="last" [attr.aria-label]="language.t('Diapositiva siguiente')" (click)="goToSlide(index + 1)">
               <svg lucideChevronDown [size]="22"></svg>
             </button>
             <span class="story-slide__rail-icon"><svg lucideLayers [size]="19"></svg></span>
@@ -121,8 +121,8 @@
   </section>
 } @else {
   <section class="not-found">
-    <span class="eyebrow">Proyecto no encontrado</span>
-    <h1>Este caso todavía no forma parte del portafolio.</h1>
-    <a class="button-primary" routerLink="/">Volver al feed</a>
+    <span class="eyebrow">{{ language.t('Proyecto no encontrado') }}</span>
+    <h1>{{ language.t('Este caso todavía no forma parte del portafolio.') }}</h1>
+    <a class="button-primary" routerLink="/">{{ language.t('Volver al feed') }}</a>
   </section>
 }

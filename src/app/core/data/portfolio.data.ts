@@ -275,6 +275,8 @@ export const CORE_TECHNOLOGIES = [
   'Docker',
   'Clean Architecture',
   'Unit Testing',
+  'C++',
+  'Python',
 ] as const;
 
 export const CERTIFICATIONS = [

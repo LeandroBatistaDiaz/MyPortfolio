@@ -11,6 +11,7 @@ import {
   LucideUserRound,
 } from '@lucide/angular';
 import { filter } from 'rxjs';
+import { LanguageService } from './core/services/language.service';
 
 type Theme = 'dark' | 'light';
 
@@ -35,6 +36,7 @@ export class App {
   private readonly destroyRef = inject(DestroyRef);
   private readonly document = inject(DOCUMENT);
   private readonly platformId = inject(PLATFORM_ID);
+  readonly language = inject(LanguageService);
 
   readonly isStoryMode = signal(this.router.url.startsWith('/projects/'));
   readonly theme = signal<Theme>('light');

@@ -1,15 +1,15 @@
 <div class="page-shell contact-page">
   <section class="surface contact-hero">
-    <span class="eyebrow">Contacto</span>
-    <h1>¿Hay un producto complejo que necesita una base clara?</h1>
+    <span class="eyebrow">{{ language.t('Contacto') }}</span>
+    <h1>{{ language.t('¿Hay un producto complejo que necesita una base clara?') }}</h1>
     <p>
-      Estoy disponible para oportunidades como .NET Software Engineer, Backend Developer o Full Stack .NET Developer en España.
+      {{ language.t('Estoy disponible para oportunidades como .NET Software Engineer, Backend Developer o Full Stack .NET Developer en España.') }}
     </p>
 
     <div class="contact-hero__actions">
       <a class="button-primary" href="https://www.linkedin.com/in/leandro-b-d/" target="_blank" rel="noreferrer">
         <img class="linkedin-button__icon" src="/icons/linkedin.svg" alt="" aria-hidden="true" />
-        Escribir por LinkedIn
+        {{ language.t('Escribir por LinkedIn') }}
         <svg lucideArrowUpRight [size]="18"></svg>
       </a>
     </div>
@@ -17,29 +17,29 @@
     <div class="contact-hero__grid">
       <article>
         <svg lucideBriefcaseBusiness [size]="22"></svg>
-        <strong>Disponibilidad</strong>
-        <span>Incorporación inmediata · Jornada completa</span>
+        <strong>{{ language.t('Disponibilidad') }}</strong>
+        <span>{{ language.t('Incorporación inmediata · Jornada completa') }}</span>
       </article>
       <article>
         <svg lucideMapPin [size]="22"></svg>
-        <strong>Ubicación</strong>
-        <span>Asturias · Híbrido y remoto en España</span>
+        <strong>{{ language.t('Ubicación') }}</strong>
+        <span>{{ language.t('Asturias · Híbrido y remoto en España') }}</span>
       </article>
       <article>
         <svg lucideMessageCircle [size]="22"></svg>
-        <strong>Idiomas</strong>
-        <span>Español nativo · Inglés B1</span>
+        <strong>{{ language.t('Idiomas') }}</strong>
+        <span>{{ language.t('Español nativo · Inglés B1') }}</span>
       </article>
     </div>
   </section>
 
   <section class="contact-note">
     <svg lucideShieldCheck [size]="19"></svg>
-    <p>Este portafolio no expone información confidencial. Los casos de estudio están anonimizados y sus interfaces son conceptuales.</p>
+    <p>{{ language.t('Este portafolio no expone información confidencial. Los casos de estudio están anonimizados y sus interfaces son conceptuales.') }}</p>
   </section>
 
   <a class="contact-back" routerLink="/">
     <svg lucideArrowLeft [size]="18"></svg>
-    Volver al feed de proyectos
+    {{ language.t('Volver al feed de proyectos') }}
   </a>
 </div>

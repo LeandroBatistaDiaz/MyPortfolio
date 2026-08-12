@@ -28,6 +28,7 @@ import {
   LucideTestTubeDiagonal,
 } from '@lucide/angular';
 import { PortfolioService } from '../../core/services/portfolio.service';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-project-detail-page',
@@ -55,6 +56,7 @@ export class ProjectDetailPage implements AfterViewInit {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
+  readonly language = inject(LanguageService);
   private readonly routeParams = toSignal(this.route.paramMap);
 
   @ViewChildren('storySlide') private readonly storySlides!: QueryList<ElementRef<HTMLElement>>;

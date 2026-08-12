@@ -13,6 +13,7 @@ import {
 } from '@lucide/angular';
 import { CERTIFICATIONS } from '../../core/data/portfolio.data';
 import { PortfolioService } from '../../core/services/portfolio.service';
+import { LanguageService } from '../../core/services/language.service';
 
 @Component({
   selector: 'app-about-page',
@@ -35,6 +36,7 @@ export class AboutPage {
   private readonly portfolio = inject(PortfolioService);
   private readonly title = inject(Title);
   private readonly meta = inject(Meta);
+  readonly language = inject(LanguageService);
 
   readonly technologies = this.portfolio.technologies;
   readonly certifications = CERTIFICATIONS;

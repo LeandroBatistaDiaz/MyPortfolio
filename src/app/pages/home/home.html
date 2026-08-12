@@ -1,34 +1,34 @@
 <div class="page-shell home-grid">
-  <aside class="profile-rail" aria-label="Resumen profesional">
-    <a class="surface profile-card profile-card--link" routerLink="/about" aria-label="Abrir perfil de Leandro Batista">
+  <aside class="profile-rail" [attr.aria-label]="language.t('Resumen profesional')">
+    <a class="surface profile-card profile-card--link" routerLink="/about" [attr.aria-label]="language.t('Abrir perfil de Leandro Batista')">
       <div class="profile-card__cover"></div>
       <div class="profile-card__avatar">
         <img src="/perfil_pic.png" alt="Leandro Batista" />
       </div>
       <h2>Leandro Batista</h2>
-      <span class="profile-card__status"><i></i> Disponible</span>
-      <p>Software Engineer especializado en backend .NET y sistemas empresariales.</p>
+      <span class="profile-card__status"><i></i> {{ language.t('Disponible') }}</span>
+      <p>{{ language.t('Software Engineer especializado en backend .NET y sistemas empresariales.') }}</p>
       <dl>
         <div>
-          <dt><svg lucideMapPin [size]="16"></svg> Ubicación</dt>
-          <dd>Asturias, España</dd>
+          <dt><svg lucideMapPin [size]="16"></svg> {{ language.t('Ubicación') }}</dt>
+          <dd>{{ language.t('Asturias, España') }}</dd>
         </div>
         <div>
-          <dt><svg lucideBriefcaseBusiness [size]="16"></svg> Modalidad</dt>
-          <dd>Presencial · Híbrido · Remoto</dd>
+          <dt><svg lucideBriefcaseBusiness [size]="16"></svg> {{ language.t('Modalidad') }}</dt>
+          <dd>{{ language.t('Presencial · Híbrido · Remoto') }}</dd>
         </div>
       </dl>
       <span class="profile-card__link">
-        Ver perfil completo
+        {{ language.t('Ver perfil completo') }}
         <svg lucideArrowUpRight [size]="17"></svg>
       </span>
     </a>
   </aside>
 
   <div class="feed-column">
-    <section id="projects" class="feed" aria-label="Proyectos realizados">
+    <section id="projects" class="feed" [attr.aria-label]="language.t('Proyectos realizados')">
       <header class="surface feed__header">
-        <span class="eyebrow">Proyectos realizados</span>
+        <span class="eyebrow">{{ language.t('Proyectos realizados') }}</span>
       </header>
 
       @for (project of projects(); track project.slug; let index = $index) {
@@ -37,10 +37,10 @@
     </section>
   </div>
 
-  <aside class="context-rail" aria-label="Tecnologías y disponibilidad">
+  <aside class="context-rail" [attr.aria-label]="language.t('Tecnologías y disponibilidad')">
     <section class="surface context-card">
-      <span class="eyebrow">Stack principal</span>
-      <h2>Backend-first.<br />Producto completo.</h2>
+      <span class="eyebrow">{{ language.t('Stack principal') }}</span>
+      <h2>{{ language.t('Senior Full-Stack Developer') }}</h2>
       <div class="technology-cloud">
         @for (technology of technologies(); track technology) {
           <span class="technology-badge">
@@ -56,6 +56,8 @@
                 @case ('Docker') { <img src="/icons/docker.svg" alt="" /> }
                 @case ('Clean Architecture') { <svg lucideBoxes [size]="16"></svg> }
                 @case ('Unit Testing') { <svg lucideTestTubeDiagonal [size]="16"></svg> }
+                @case ('C++') { <strong class="technology-badge__text-icon">C++</strong> }
+                @case ('Python') { <strong class="technology-badge__text-icon">Py</strong> }
               }
             </span>
             <span>{{ technology }}</span>
@@ -73,8 +75,8 @@
     </section>
 
     <section class="context-note">
-      <strong>Contenido responsable</strong>
-      <p>Los proyectos empresariales están anonimizados y utilizan recursos visuales conceptuales.</p>
+      <strong>{{ language.t('Contenido responsable') }}</strong>
+      <p>{{ language.t('Los proyectos empresariales están anonimizados y utilizan recursos visuales conceptuales.') }}</p>
     </section>
   </aside>
 </div>
