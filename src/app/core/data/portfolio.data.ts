@@ -116,7 +116,7 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
   },
   {
     slug: 'fcmsystem-modular-erp',
-    title: 'FCMSystem · Modular Multi-Tenant ERP',
+    title: 'ERP - FCMSystem · Modular Multi-Tenant',
     shortTitle: 'FCMSystem ERP',
     category: 'SaaS · ERP industrial',
     summary:
@@ -187,6 +187,79 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     ],
     disclaimer:
       'Caso empresarial presentado con capturas proporcionadas por el autor. El sistema automatiza compras, ventas, inventario, almacén y fabricación bajo una arquitectura SaaS multi-tenant.',
+  },
+  {
+    slug: 'epelsa-computer-vision',
+    title: 'Computer Vision para reconocimiento de productos',
+    shortTitle: 'Computer Vision',
+    category: 'Computer Vision · Retail Automation',
+    summary:
+      'Solución de visión por computador para asistir el reconocimiento automático de productos en estaciones de pesaje de supermercados.',
+    role: 'Software Engineer Intern · C++ / Computer Vision',
+    period: 'Práctica académica curricular · mayo–agosto 2026',
+    cover: '/images/epelsa-vision-hero.jpg',
+    coverSequence: [
+      '/images/epelsa-vision-hero.jpg',
+      '/images/epelsa-vision-console.jpg',
+      '/images/epelsa-vision-workflow.jpg',
+    ],
+    logo: '/images/epelsa-logo.jpg',
+    logoAlt: 'Grupo Epelsa',
+    accent: 'violet',
+    technologies: ['C++'],
+    capabilities: ['Reconocimiento visual', 'Asistencia al pesaje', 'Confirmación operativa', 'Feedback del operador'],
+    attribution: 'Grupo Epelsa',
+    slides: [
+      {
+        image: '/images/epelsa-vision-hero.jpg',
+        imageAlt: 'Concepto visual de una estación de pesaje con cámara y reconocimiento de producto.',
+        label: '01 · Contexto',
+        title: 'Reconocer el producto en el mismo momento del pesaje',
+        body:
+          'Durante mi práctica académica curricular participé en una solución de visión por computador orientada a automatizar la identificación de productos en balanzas de supermercados. El objetivo era asistir al operador y reducir la fricción entre capturar el producto, reconocerlo y continuar la operación.',
+        bullets: ['Estaciones de pesaje asistidas', 'Reconocimiento automático de productos', 'Experiencia orientada al operador'],
+      },
+      {
+        image: '/images/epelsa-vision-console.jpg',
+        imageAlt: 'Interfaz conceptual de una consola de reconocimiento visual para una estación de pesaje.',
+        label: '02 · Experiencia',
+        title: 'Una consola clara para revisar la predicción y actuar con confianza',
+        body:
+          'La experiencia conceptual muestra una vista de cámara, el resultado del reconocimiento y una lista de alternativas. El operador puede confirmar el producto sugerido o elegir otro elemento cuando la identificación requiere revisión humana.',
+        bullets: ['Vista previa de cámara', 'Producto sugerido y alternativas', 'Confirmación o selección manual'],
+      },
+      {
+        image: '/images/epelsa-vision-workflow.jpg',
+        imageAlt: 'Flujo conceptual de captura, reconocimiento y confirmación humana de un producto.',
+        label: '03 · Flujo operativo',
+        title: 'Captura, reconocimiento y confirmación en un flujo continuo',
+        body:
+          'El recorrido conecta la captura del producto sobre la balanza con el reconocimiento visual y la confirmación final del operador. Esta combinación mantiene a la persona dentro del circuito y permite que cada corrección se convierta en una señal útil para mejorar la operación.',
+        bullets: ['Captura del producto en la balanza', 'Sugerencias visuales ordenadas', 'Confirmación humana del resultado'],
+      },
+      {
+        image: '/images/epelsa-vision-scale.jpg',
+        imageAlt: 'Concepto cinematográfico de una balanza de supermercado con cámara y producto identificado.',
+        label: '04 · Integración',
+        title: 'Tecnología aplicada al punto exacto donde ocurre la operación',
+        body:
+          'La solución se concibió para convivir con el entorno real de una estación de pesaje: cámara, balanza, producto y pantalla de operación. La interfaz prioriza una lectura rápida para que el reconocimiento ayude al trabajo cotidiano sin interrumpirlo.',
+        bullets: ['Cámara y balanza en el mismo punto de trabajo', 'Respuesta visual inmediata', 'Asistencia sin sustituir la decisión del operador'],
+      },
+      {
+        image: '/images/epelsa-vision-flow.jpg',
+        imageAlt: 'Diagrama conceptual del flujo de captura, reconocimiento, sugerencias y confirmación.',
+        label: '05 · Contribución',
+        title: 'Desarrollo, integración y liderazgo dentro del equipo',
+        body:
+          'Contribuí al análisis, desarrollo, integración y validación funcional del software de Computer Vision en C++. Además, ejercí como Scrum Master y líder del equipo de desarrollo, ayudando a organizar el trabajo y mantener el foco en entregables verificables durante la práctica.',
+        bullets: ['C++ y Computer Vision', 'Análisis, integración y validación funcional', 'Scrum Master y liderazgo técnico del equipo'],
+        metricLabel: 'Resultado cualitativo',
+        metricValue: 'Reconocimiento visual integrado en una experiencia operativa',
+      },
+    ],
+    disclaimer:
+      'Práctica académica curricular realizada en Grupo Epelsa. Las imágenes presentadas son conceptos visuales creados para representar el software real y no muestran interfaces ni información confidencial del proyecto.',
   },
   createProjectTemplate('vehicle-backed-lending-platform', 'blue'),
   createProjectTemplate('industrial-manufacturing-erp', 'mint'),
