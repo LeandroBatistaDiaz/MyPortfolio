@@ -124,6 +124,11 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     role: 'Software Engineer · Full Stack .NET',
     period: 'Caso de estudio · Proyecto empresarial',
     cover: '/images/fcm-dashboard.png',
+    coverSequence: [
+      '/images/fcm-dashboard.png',
+      '/images/fcm-billing.png',
+      '/images/fcm-manufacturing.png',
+    ],
     logo: '/images/jkf-logo.png',
     logoAlt: 'JKF Engineering Soft',
     accent: 'blue',
