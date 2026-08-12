@@ -54,7 +54,7 @@
 .project-card__placeholder::after { width: 28%; height: 30%; translate: 52% 38%; }
 .project-card__placeholder svg { color: var(--mint); filter: drop-shadow(0 8px 20px rgb(94 229 189 / 28%)); }
 .project-card__placeholder small { font-size: 0.7rem; font-weight: 850; letter-spacing: 0.06em; text-transform: uppercase; }
-.project-card__brand { position: absolute; top: 1rem; right: 1rem; z-index: 3; display: grid; width: 5.9rem; height: 3.66rem; place-items: center; overflow: hidden; border: 1px solid rgb(255 255 255 / 72%); border-radius: 0.7rem; background: rgb(255 255 255 / 92%); box-shadow: 0 10px 24px rgb(0 0 0 / 18%); }
+.project-card__brand { position: absolute; top: 1rem; right: 1rem; z-index: 3; display: grid; width: 5.9rem; height: 4.63rem; place-items: center; overflow: hidden; border: 1px solid rgb(255 255 255 / 72%); border-radius: 0.7rem; background: rgb(255 255 255 / 92%); box-shadow: 0 10px 24px rgb(0 0 0 / 18%); }
 .project-card__brand img { width: 100%; height: 100%; object-fit: contain; animation: none; }
 .project-card__media-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 46%, rgb(2 4 10 / 78%)); }
 .project-card__number { position: absolute; top: 1rem; left: 1rem; color: rgb(255 255 255 / 82%); font-size: 0.72rem; font-weight: 950; letter-spacing: 0.16em; }

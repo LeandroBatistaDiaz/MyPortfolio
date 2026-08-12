@@ -17,7 +17,7 @@
   will-change: transform;
 }
 .story-slide__veil { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(3 6 12 / 15%), rgb(3 6 12 / 76%)), linear-gradient(0deg, rgb(3 6 12 / 38%), transparent 50%); }
-.story-slide__brand { position: absolute; top: 6.5rem; left: 2rem; z-index: 4; display: grid; width: 8.2rem; height: 4.2rem; place-items: center; overflow: hidden; border: 1px solid rgb(255 255 255 / 70%); border-radius: 0.9rem; background: rgb(255 255 255 / 92%); box-shadow: 0 18px 38px rgb(0 0 0 / 26%); }
+.story-slide__brand { position: absolute; top: 6.5rem; left: 2rem; z-index: 4; display: grid; width: 8.2rem; height: 6.38rem; place-items: center; overflow: hidden; border: 1px solid rgb(255 255 255 / 70%); border-radius: 0.9rem; background: rgb(255 255 255 / 92%); box-shadow: 0 18px 38px rgb(0 0 0 / 26%); }
 .story-slide__brand img { width: 100%; height: 100%; object-fit: contain; }
 .story-slide__mockup { position: absolute; inset: 50% auto auto 50%; width: min(70%, 38rem); aspect-ratio: 16 / 10; translate: -50% -50%; border: 1px solid rgb(255 255 255 / 18%); border-radius: 1.25rem; background: rgb(8 13 24 / 68%); padding: 1rem; box-shadow: 0 35px 90px rgb(0 0 0 / 45%); backdrop-filter: blur(16px); transform: perspective(900px) rotateY(4deg) rotateX(2deg); }
 .mockup__bar { display: flex; gap: 0.35rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgb(255 255 255 / 10%); }
@@ -74,7 +74,7 @@
   .story__progress { inset: 4.65rem 0.75rem auto; }
   .story__back { top: 5.2rem; left: 0.8rem; width: auto; padding: 0.6rem 0.78rem; aspect-ratio: auto; justify-content: center; box-shadow: 0 10px 28px rgb(0 0 0 / 28%); }
   .story__back span { display: inline; }
-  .story-slide__brand { top: 8.2rem; left: 1.15rem; width: 6.4rem; height: 3.25rem; }
+  .story-slide__brand { top: 8.2rem; left: 1.15rem; width: 6.4rem; height: 4.94rem; }
   .story-slide { display: block; }
   .story-slide__visual { position: absolute; inset: 0; min-height: auto; }
   .story-slide__veil { background: linear-gradient(180deg, rgb(3 6 12 / 12%) 20%, rgb(3 6 12 / 90%) 68%, #03060c 100%); }
