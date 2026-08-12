@@ -125,6 +125,7 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     period: 'Caso de estudio · Proyecto empresarial',
     cover: '/images/fcm-dashboard.png',
     coverSequence: [
+      '/images/fcm-erp-cover.jpg',
       '/images/fcm-dashboard.png',
       '/images/fcm-billing.png',
       '/images/fcm-manufacturing.png',
@@ -261,10 +262,6 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     disclaimer:
       'Práctica académica curricular realizada en Grupo Epelsa. Las imágenes presentadas son conceptos visuales creados para representar el software real y no muestran interfaces ni información confidencial del proyecto.',
   },
-  createProjectTemplate('vehicle-backed-lending-platform', 'blue'),
-  createProjectTemplate('industrial-manufacturing-erp', 'mint'),
-  createProjectTemplate('warehouse-management-system', 'coral'),
-  createProjectTemplate('measurement-quotation-system', 'violet'),
 ];
 
 export const CORE_TECHNOLOGIES = [
