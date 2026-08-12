@@ -1,6 +1,7 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { CORE_TECHNOLOGIES, PORTFOLIO_PROJECTS } from '../data/portfolio.data';
 
+// Lead with the newest computer-vision case study, then the ERP and medical systems.
 const FEED_PROJECT_ORDER = ['epelsa-computer-vision', 'fcmsystem-modular-erp', 'gi-medical-management'];
 
 @Injectable({ providedIn: 'root' })
