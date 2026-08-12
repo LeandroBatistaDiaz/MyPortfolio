@@ -54,6 +54,11 @@
         <small>Espacio para evidencia visual</small>
       </span>
     }
+    @if (project().logo; as logo) {
+      <span class="project-card__brand" aria-label="Proyecto desarrollado por JKF Engineering Soft">
+        <img [src]="logo" [alt]="project().logoAlt ?? ''" />
+      </span>
+    }
     <span class="project-card__media-overlay"></span>
     <span class="project-card__number">0{{ index() + 1 }}</span>
     <span class="project-card__open">
@@ -73,6 +78,11 @@
           <svg lucideCopyright [size]="13"></svg>
           {{ attribution }}
         </span>
+      }
+      @if (project().contactCta; as contactCta) {
+        <a class="project-card__contact" href="mailto:kelvisferreras@gmail.com" (click)="$event.stopPropagation()">
+          {{ contactCta }}
+        </a>
       }
     </div>
     <div class="project-card__tech" aria-label="Tecnologías principales">

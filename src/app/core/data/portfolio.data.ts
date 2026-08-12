@@ -60,6 +60,8 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     role: 'Full Stack .NET Developer',
     period: 'Caso de estudio · Proyecto empresarial',
     cover: '/images/gi-medical-dashboard.png',
+    logo: '/images/jkf-logo.png',
+    logoAlt: 'JKF Engineering Soft',
     coverSequence: [
       '/og.png',
       '/images/gi-medical-dashboard.png',
@@ -111,6 +113,75 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     ],
     disclaimer:
       'Caso empresarial anonimizado. Las capturas se han tratado para ocultar identidad, datos clínicos, usuarios e importes; no contienen información de pacientes.',
+  },
+  {
+    slug: 'fcmsystem-modular-erp',
+    title: 'FCMSystem · Modular Multi-Tenant ERP',
+    shortTitle: 'FCMSystem ERP',
+    category: 'SaaS · ERP industrial',
+    summary:
+      'SaaS multi-tenant para coordinar compras, ventas, inventario, almacén y fabricación desde una misma operación empresarial.',
+    role: 'Software Engineer · Full Stack .NET',
+    period: 'Caso de estudio · Proyecto empresarial',
+    cover: '/images/fcm-dashboard.png',
+    logo: '/images/jkf-logo.png',
+    logoAlt: 'JKF Engineering Soft',
+    accent: 'blue',
+    technologies: ['Angular', '.NET', 'SQL Server', 'Entity Framework', 'REST APIs', 'JWT'],
+    capabilities: ['Ventas y caja', 'Inventario y almacén', 'Fabricación por composición', 'Multi-tenant'],
+    attribution: 'JKF Engineering Soft',
+    contactCta: '¿Te interesa este sistema? Escríbenos un email: kelvisferreras@gmail.com',
+    slides: [
+      {
+        image: '/images/fcm-dashboard.png',
+        imageAlt: 'Dashboard general de FCMSystem con indicadores de ventas, caja e inventario.',
+        label: '01 · Operación',
+        title: 'Una vista ejecutiva para decidir con el pulso del negocio',
+        body:
+          'El dashboard concentra el resumen de ventas, caja e inventario de los últimos treinta días y lo compara con el periodo anterior. Los indicadores de monto total, ticket promedio, cantidad de ventas, efectivo, inventario y artículos bajo stock convierten la operación diaria en señales accionables.',
+        bullets: ['Resumen de ventas, caja e inventario', 'Comparativos por periodo', 'Evolución de ventas y alertas de stock'],
+      },
+      {
+        image: '/images/fcm-billing.png',
+        imageAlt: 'Pantalla de facturación de FCMSystem con artículos, cantidades, impuestos y resumen de venta.',
+        label: '02 · Ventas',
+        title: 'Facturación conectada con clientes, caja y existencias',
+        body:
+          'El flujo de ventas permite seleccionar artículos, aplicar cantidades y medidas, gestionar descuentos y calcular impuestos antes de cobrar. La factura se integra con clientes, condiciones de pago, comprobantes fiscales, caja e inventario para conservar la trazabilidad de cada operación.',
+        bullets: ['Facturación con NCF', 'Cotizaciones y descuentos por contexto', 'Caja, cobro e integración con inventario'],
+      },
+      {
+        image: '/images/fcm-manufacturing.png',
+        imageAlt: 'Módulo de productos fabricados y configuración de piezas de FCMSystem.',
+        label: '03 · Fabricación',
+        title: 'Composición de artículos para convertir materias primas en productos vendibles',
+        body:
+          'La fabricación se modela mediante productos compuestos y piezas. El sistema permite definir dimensiones, materias primas y relaciones de composición para calcular el material requerido, asociar órdenes de fabricación a una venta y reflejar el consumo en inventario.',
+        bullets: ['Productos fabricados y piezas', 'Cálculo de materia prima por dimensiones', 'Órdenes de fabricación asociables a ventas'],
+      },
+      {
+        image: '/images/fcm-inventory.png',
+        imageAlt: 'Balance de inventario de FCMSystem con existencias, valoración, alertas y movimientos.',
+        label: '04 · Inventario y almacén',
+        title: 'Existencias confiables desde la compra hasta el despacho',
+        body:
+          'Inventario y almacén comparten una fuente de verdad para registrar entradas, salidas, movimientos, proveedores, órdenes de compra y despachos. El balance por artículo, la validación de existencias y las alertas de stock ayudan a proteger la continuidad operativa.',
+        bullets: ['Balance y valoración por artículo', 'Proveedores, compras y despachos', 'Movimientos y validación de existencia'],
+      },
+      {
+        image: '/images/fcm-architecture.png',
+        imageAlt: 'Diagrama de arquitectura monolítica modular multi-tenant de FCMSystem.',
+        label: '05 · Arquitectura',
+        title: 'Un monolito modular preparado para crecer por tenant y por dominio',
+        body:
+          'FCMSystem organiza sus capacidades dentro de un monolito modular construido con .NET y Angular. El contexto del tenant se resuelve en cada solicitud y los módulos comparten contratos de dominio sin perder separación. SQL Server, Entity Framework Core, JWT con refresh token y hash de contraseñas sostienen una base segura y mantenible.',
+        bullets: ['Angular, .NET y API REST', 'Multi-tenant con contexto y datos aislados', 'EF Core, SQL Server y contratos compartidos', 'JWT, refresh token, roles y permisos'],
+        metricLabel: 'Resultado cualitativo',
+        metricValue: 'Operación industrial conectada en un solo producto',
+      },
+    ],
+    disclaimer:
+      'Caso empresarial presentado con capturas proporcionadas por el autor. El sistema automatiza compras, ventas, inventario, almacén y fabricación bajo una arquitectura SaaS multi-tenant.',
   },
   createProjectTemplate('vehicle-backed-lending-platform', 'blue'),
   createProjectTemplate('industrial-manufacturing-erp', 'mint'),

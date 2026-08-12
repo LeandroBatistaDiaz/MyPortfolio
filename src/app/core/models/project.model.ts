@@ -21,10 +21,13 @@ export interface PortfolioProject {
   readonly period: string;
   readonly cover?: string;
   readonly coverSequence?: readonly string[];
+  readonly logo?: string;
+  readonly logoAlt?: string;
   readonly accent: ProjectAccent;
   readonly technologies: readonly string[];
   readonly capabilities: readonly string[];
   readonly attribution?: string;
+  readonly contactCta?: string;
   readonly slides: readonly ProjectSlide[];
   readonly disclaimer: string;
   readonly isPlaceholder?: boolean;

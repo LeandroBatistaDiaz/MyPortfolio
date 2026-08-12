@@ -1,6 +1,6 @@
 @if (project(); as project) {
   <section class="story" [attr.data-accent]="project.accent" aria-label="Historia del proyecto">
-    <div class="story__progress" aria-label="Progreso de la historia">
+    <div class="story__progress" [style.grid-template-columns]="'repeat(' + project.slides.length + ', minmax(0, 1fr))'" aria-label="Progreso de la historia">
       @for (slide of project.slides; track slide.label; let index = $index) {
         <button
           type="button"
@@ -31,6 +31,11 @@
               />
             }
             <span class="story-slide__veil"></span>
+            @if (index === 0 && project.logo; as logo) {
+              <span class="story-slide__brand" aria-label="Proyecto desarrollado por JKF Engineering Soft">
+                <img [src]="logo" [alt]="project.logoAlt ?? ''" />
+              </span>
+            }
             <div class="story-slide__mockup" aria-hidden="true">
               <span class="mockup__bar"><i></i><i></i><i></i></span>
               <span class="mockup__metric"></span>
