@@ -1,9 +1,15 @@
 import { computed, Injectable, signal } from '@angular/core';
 import { CORE_TECHNOLOGIES, PORTFOLIO_PROJECTS } from '../data/portfolio.data';
 
+const FEED_PROJECT_ORDER = ['epelsa-computer-vision', 'fcmsystem-modular-erp', 'gi-medical-management'];
+
 @Injectable({ providedIn: 'root' })
 export class PortfolioService {
-  readonly projects = signal(PORTFOLIO_PROJECTS);
+  readonly projects = signal(
+    PORTFOLIO_PROJECTS.slice().sort(
+      (left, right) => FEED_PROJECT_ORDER.indexOf(left.slug) - FEED_PROJECT_ORDER.indexOf(right.slug),
+    ),
+  );
   readonly technologies = signal(CORE_TECHNOLOGIES);
   // The feed is the portfolio's complete project stream; keep every case study
   // visible instead of silently truncating it to the first four entries.
