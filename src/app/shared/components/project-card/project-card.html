@@ -29,7 +29,6 @@
       @for (image of project().coverSequence; track image; let frameIndex = $index) {
         <span
           class="project-card__cover-frame"
-          [style.animation-delay]="-(frameIndex * 3) + 's'"
           aria-hidden="true"
         >
           <img
@@ -64,10 +63,18 @@
   </a>
 
   <footer class="project-card__footer">
+    <div class="project-card__meta">
     <span class="project-card__capabilities">
       <svg lucideLayers [size]="17"></svg>
       {{ project().capabilities.slice(0, 2).join(' · ') }}
     </span>
+      @if (project().attribution; as attribution) {
+        <span class="project-card__attribution">
+          <svg lucideCopyright [size]="13"></svg>
+          {{ attribution }}
+        </span>
+      }
+    </div>
     <div class="project-card__tech" aria-label="Tecnologías principales">
       @for (technology of project().technologies.slice(0, 3); track technology) {
         <span class="project-tech-badge">

@@ -24,6 +24,7 @@ export interface PortfolioProject {
   readonly accent: ProjectAccent;
   readonly technologies: readonly string[];
   readonly capabilities: readonly string[];
+  readonly attribution?: string;
   readonly slides: readonly ProjectSlide[];
   readonly disclaimer: string;
   readonly isPlaceholder?: boolean;

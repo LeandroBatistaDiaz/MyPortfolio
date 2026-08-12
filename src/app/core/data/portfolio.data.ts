@@ -68,6 +68,7 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
     accent: 'mint',
     technologies: ['Angular', '.NET', 'SQL Server', 'Entity Framework', 'REST APIs', 'JWT', 'Clean Architecture'],
     capabilities: ['Facturación con seguros', 'Gestión de pacientes', 'Asignación operativa', 'Reportes y KPI'],
+    attribution: 'JKF Engineering Soft',
     slides: [
       {
         image: '/images/gi-medical-dashboard.png',
