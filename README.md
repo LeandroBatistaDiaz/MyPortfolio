@@ -40,6 +40,20 @@ npm start
 
 The development server runs at `http://localhost:4200/`.
 
+## Publicar en GitHub Pages
+
+El repositorio se publica automáticamente con GitHub Actions cada vez que se hace push a `main`.
+
+```bash
+npm run build:github-pages
+```
+
+El workflow `.github/workflows/deploy-pages.yml` instala las dependencias, genera la salida estática con el prefijo `/MyPortfolio/`, prepara el fallback `404.html` para las rutas de Angular y publica el artefacto en GitHub Pages. La URL del proyecto es:
+
+`https://leandrobatistadiaz.github.io/MyPortfolio/`
+
+Para activar Pages manualmente en GitHub: `Settings` → `Pages` → `Build and deployment` → `Source: GitHub Actions`. No se necesitan credenciales adicionales dentro del repositorio; el workflow usa los permisos de Pages de la cuenta propietaria.
+
 ## Quality checks
 
 ```bash
