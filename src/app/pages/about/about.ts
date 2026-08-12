@@ -39,6 +39,21 @@ export class AboutPage {
   readonly technologies = this.portfolio.technologies;
   readonly certifications = CERTIFICATIONS;
 
+  private readonly technologyIcons: Record<string, string> = {
+    'C#': '/icons/csharp.svg',
+    '.NET 8': '/icons/dotnet.svg',
+    'ASP.NET Core': '/icons/dotnet.svg',
+    'REST APIs': '/icons/swagger.svg',
+    'SQL Server': '/icons/sql-server.svg',
+    'Entity Framework': '/icons/entity-framework.svg',
+    Angular: '/icons/angular.svg',
+    Docker: '/icons/docker.svg',
+  };
+
+  technologyIcon(technology: string): string | null {
+    return this.technologyIcons[technology] ?? null;
+  }
+
   constructor() {
     this.title.setTitle('Perfil profesional · Leandro Batista');
     this.meta.updateTag({

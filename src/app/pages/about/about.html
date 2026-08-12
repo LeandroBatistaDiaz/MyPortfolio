@@ -1,14 +1,23 @@
 <div class="page-shell about-page">
   <section class="surface about-hero">
     <div>
-      <span class="eyebrow">Perfil profesional</span>
-      <h1>Backend .NET, mentalidad de producto y experiencia empresarial.</h1>
+      <div class="about-hero__identity">
+        <img class="about-hero__portrait" src="/perfil_pic.png" alt="Retrato de Leandro Batista" />
+        <div>
+          <span class="eyebrow">Perfil profesional</span>
+          <p class="about-hero__role">Software Engineer Â· Backend .NET</p>
+        </div>
+      </div>
+      <h1>.NET, mentalidad de producto y experiencia empresarial.</h1>
       <p>
-        Soy Software Engineer especializado en C#, .NET 8, APIs REST y SQL Server. Transformo requisitos de negocio en soluciones mantenibles, desde el modelado de datos hasta la integración y validación funcional.
+        Soy Software Engineer especializado en C#, .NET 8, APIs REST y SQL Server. Transformo requisitos de negocio en soluciones mantenibles, desde el modelado de datos hasta la integración, validación funcional y evolución del producto.
       </p>
       <div class="about-hero__actions">
         <a class="button-primary" routerLink="/contact">Contactar <svg lucideMoveRight [size]="18"></svg></a>
-        <a class="button-secondary" href="https://www.linkedin.com/in/leandro-b-d/" target="_blank" rel="noreferrer">LinkedIn <svg lucideArrowUpRight [size]="17"></svg></a>
+        <a class="button-secondary linkedin-button" href="https://www.linkedin.com/in/leandro-b-d/" target="_blank" rel="noreferrer">
+          <img src="/icons/linkedin.svg" alt="" aria-hidden="true" />
+          LinkedIn <svg lucideArrowUpRight [size]="17"></svg>
+        </a>
       </div>
     </div>
     <aside class="about-hero__facts" aria-label="Datos profesionales">
@@ -54,7 +63,14 @@
         <h2>Stack con el que construyo</h2>
         <div>
           @for (technology of technologies(); track technology) {
-            <span><svg lucideCircleCheck [size]="15"></svg>{{ technology }}</span>
+            <span class="skill-card__technology">
+              @if (technologyIcon(technology); as icon) {
+                <img [src]="icon" [alt]="technology + ' logo'" />
+              } @else {
+                <svg lucideCircleCheck [size]="22"></svg>
+              }
+              <strong>{{ technology }}</strong>
+            </span>
           }
         </div>
       </section>
@@ -76,7 +92,10 @@
     <div>
       @for (certification of certifications; track certification.title) {
         <article class="surface">
-          <svg lucideBadgeCheck [size]="22"></svg>
+          <div class="certification__media">
+            <img [src]="certification.image" [alt]="'Certificado: ' + certification.title" loading="lazy" />
+            <span><svg lucideBadgeCheck [size]="20"></svg></span>
+          </div>
           <h3>{{ certification.title }}</h3>
           <p>{{ certification.issuer }}</p>
           <time>{{ certification.date }}</time>

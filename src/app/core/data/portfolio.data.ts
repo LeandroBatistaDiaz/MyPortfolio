@@ -278,8 +278,8 @@ export const CORE_TECHNOLOGIES = [
 ] as const;
 
 export const CERTIFICATIONS = [
-  { title: 'Programación avanzada en C# .NET', issuer: 'ITLA', date: '2025' },
-  { title: 'Desarrollo web frontend con Angular', issuer: 'ITLA', date: '2024' },
-  { title: 'Foundational C#', issuer: 'Microsoft · freeCodeCamp', date: '2023' },
-  { title: 'Intermediate Machine Learning', issuer: 'Kaggle', date: '2026' },
+  { title: 'Programación avanzada en C# .NET', issuer: 'ITLA', date: '2025', image: '/images/certificates/net-avanzado.jpg' },
+  { title: 'Desarrollo web frontend con Angular', issuer: 'ITLA', date: '2024', image: '/images/certificates/angular.jpg' },
+  { title: 'Python', issuer: 'Kaggle', date: '2026', image: '/images/certificates/python.png' },
+  { title: 'Intermediate Machine Learning', issuer: 'Kaggle', date: '2026', image: '/images/certificates/kaggle-intermediate-machine-learning.jpg' },
 ] as const;
