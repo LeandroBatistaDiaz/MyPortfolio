@@ -7,7 +7,6 @@ import {
   LucideBoxes,
   LucideBriefcaseBusiness,
   LucideMapPin,
-  LucideSparkles,
   LucideTestTubeDiagonal,
 } from '@lucide/angular';
 import { PortfolioService } from '../../core/services/portfolio.service';
@@ -21,7 +20,6 @@ import { ProjectCardComponent } from '../../shared/components/project-card/proje
     LucideMapPin,
     LucideBriefcaseBusiness,
     LucideArrowUpRight,
-    LucideSparkles,
     LucideBadgeCheck,
     LucideBoxes,
     LucideTestTubeDiagonal,

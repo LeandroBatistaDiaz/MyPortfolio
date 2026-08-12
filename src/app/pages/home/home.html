@@ -26,13 +26,9 @@
   </aside>
 
   <div class="feed-column">
-    <section id="projects" class="feed" aria-labelledby="projects-title">
+    <section id="projects" class="feed" aria-label="Proyectos realizados">
       <header class="surface feed__header">
-        <div>
-          <span class="eyebrow">Proyectos realizados</span>
-          <h1 id="projects-title">Proyectos desarrollados</h1>
-        </div>
-        <span class="feed__hint"><svg lucideSparkles [size]="16"></svg> Desliza y explora</span>
+        <span class="eyebrow">Proyectos realizados</span>
       </header>
 
       @for (project of projects(); track project.slug; let index = $index) {
