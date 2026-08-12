@@ -191,7 +191,7 @@ export const PORTFOLIO_PROJECTS: readonly PortfolioProject[] = [
   },
   {
     slug: 'epelsa-computer-vision',
-    title: 'Computer Vision para reconocimiento de productos',
+    title: 'IA Computer Vision para reconocimiento de productos',
     shortTitle: 'Computer Vision',
     category: 'Computer Vision · Retail Automation',
     summary:

@@ -8,10 +8,7 @@
           <p class="about-hero__role">{{ language.t('Software Engineer · Backend .NET') }}</p>
         </div>
       </div>
-      <h1>{{ language.t('.NET, mentalidad de producto y experiencia empresarial.') }}</h1>
-      <p>
-        {{ language.t('Soy Software Engineer especializado en C#, .NET 8, APIs REST y SQL Server. Transformo requisitos de negocio en soluciones mantenibles, desde el modelado de datos hasta la integración, validación funcional y evolución del producto.') }}
-      </p>
+      <h1 class="about-hero__headline">{{ language.t('Ingeniero de software con experiencia sólida en .NET, ASP, Windows Form, C#, Python y C++ aplicado a machine learning, automatización de procesos y desarrollo de software empresarial.') }}</h1>
       <div class="about-hero__actions">
         <a class="button-primary" routerLink="/contact">{{ language.t('Contactar') }} <svg lucideMoveRight [size]="18"></svg></a>
         <a class="button-secondary linkedin-button" href="https://www.linkedin.com/in/leandro-b-d/" target="_blank" rel="noreferrer">
@@ -87,7 +84,7 @@
   <section class="certifications" aria-labelledby="certifications-title">
     <header>
       <span class="eyebrow">{{ language.t('Aprendizaje continuo') }}</span>
-      <h2 id="certifications-title">{{ language.t('Certificaciones seleccionadas') }}</h2>
+      <h2 id="certifications-title">{{ language.t('Certificaciones') }}</h2>
     </header>
     <div>
       @for (certification of certifications; track certification.title) {
