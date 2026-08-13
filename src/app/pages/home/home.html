@@ -28,7 +28,7 @@
   <div class="feed-column">
     <section id="projects" class="feed" [attr.aria-label]="language.t('Proyectos realizados')">
       <header class="surface feed__header">
-        <span class="eyebrow">{{ language.t('Proyectos realizados') }}</span>
+        <h1 class="feed__title">{{ language.t('Proyectos realizados') }}</h1>
       </header>
 
       @for (project of projects(); track project.slug; let index = $index) {
