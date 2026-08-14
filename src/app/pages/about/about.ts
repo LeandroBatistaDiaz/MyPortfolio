@@ -8,6 +8,7 @@ import {
   LucideCircleCheck,
   LucideGraduationCap,
   LucideLanguages,
+  LucideMail,
   LucideMapPin,
   LucideMoveRight,
 } from '@lucide/angular';
@@ -25,6 +26,7 @@ import { LanguageService } from '../../core/services/language.service';
     LucideCircleCheck,
     LucideGraduationCap,
     LucideLanguages,
+    LucideMail,
     LucideMapPin,
     LucideMoveRight,
   ],

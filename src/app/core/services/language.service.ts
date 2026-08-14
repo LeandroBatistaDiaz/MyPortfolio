@@ -17,7 +17,7 @@ const ENGLISH: Record<string, string> = {
   'Perfil profesional': 'Professional profile', 'Software Engineer \u00b7 Backend .NET': 'Software Engineer \u00b7 .NET Backend',
   '.NET, mentalidad de producto y experiencia empresarial.': '.NET, product thinking and enterprise experience.',
   'Soy Software Engineer especializado en C#, .NET 8, APIs REST y SQL Server. Transformo requisitos de negocio en soluciones mantenibles, desde el modelado de datos hasta la integraci\u00f3n, validaci\u00f3n funcional y evoluci\u00f3n del producto.': 'I am a Software Engineer specialized in C#, .NET 8, REST APIs, and SQL Server. I turn business requirements into maintainable solutions, from data modeling to integration, functional validation, and product evolution.',
-  Contactar: 'Contact me', 'Datos profesionales': 'Professional details', 'Espa\u00f1ol nativo \u00b7 Ingl\u00e9s B1': 'Native Spanish \u00b7 B1 English', 'Perfil internacional disponible': 'International profile available',
+  Contactar: 'Contact me', GitHub: 'GitHub', 'Enviar correo': 'Email me', 'Datos profesionales': 'Professional details', 'Espa\u00f1ol nativo \u00b7 Ingl\u00e9s B1': 'Native Spanish \u00b7 B1 English', 'Perfil internacional disponible': 'International profile available',
   Trayectoria: 'Experience', 'Experiencia profesional': 'Professional experience', 'Remoto \u00b7 Espa\u00f1a': 'Remote \u00b7 Spain',
   'Remoto \u00b7 Rep\u00fablica Dominicana': 'Remote \u00b7 Dominican Republic', 'H\u00edbrido \u00b7 Rep\u00fablica Dominicana': 'Hybrid \u00b7 Dominican Republic',
   'Tecnolog\u00edas': 'Technologies', 'Stack con el que construyo': 'The stack I build with', 'Formaci\u00f3n': 'Education',
